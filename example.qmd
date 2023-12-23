@@ -1,0 +1,51 @@
+---
+title: Panel in Quarto Examples
+format: html
+filters:
+  - whitphx/stlite
+  - holoviz/panel-quarto
+---
+
+A Panel application embedded in a Quarto doc
+
+```{panel-python}
+import panel as pn
+
+pn.extension(design="material")
+
+slider = pn.widgets.IntSlider(name="Select a value", value=0, start=0, end=100)
+pn.Column(
+    "# Hello Panel + Quarto!",
+    pn.rx("The value is {}").format(slider)
+).servable()
+```
+
+A stlite application embedded in a Quarto doc
+
+```{stlite-python}
+import streamlit as st
+
+st.title("Hello Stlite + Quarto!")
+value = st.slider("Select a value", 0, 100, 0)
+st.write("You selected:", value)
+```
+
+A Matplotlib application embedded in a Quarto doc
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 4 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1.2, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
