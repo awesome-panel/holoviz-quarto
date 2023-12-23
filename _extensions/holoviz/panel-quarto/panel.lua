@@ -11,15 +11,16 @@ py = sys.stdin.read()
 ht, _ = script_to_html( 
     StringIO(py), runtime="pyscript"
 )
+ht=ht.replace('<body', '<script type="text/javascript" src="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js"></script><body')
 ht = html.escape(ht)
-print(f"<iframe srcdoc='{ht}' class='panel'></iframe>")]]
+print(f"<iframe srcdoc='{ht}' class='panel' onload='iframeLoaded(this)'></iframe>")]]
       converted_code = pandoc.pipe("python", {"-c", str}, el.text)
       print(converted_code)
       quarto.doc.add_html_dependency(
         {
-          name = "panel-pyodide",
+          name = "panel-python",
           stylesheets = {"style.css"},
-          scripts = {"iframeResizer.min.js",},
+          scripts = {"iframeResizer.min.js", "panel-quarto.js"},
         }
       )
 

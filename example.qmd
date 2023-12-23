@@ -6,21 +6,21 @@ filters:
   - holoviz/panel-quarto
 ---
 
-A Panel application embedded in a Quarto doc
+A **Panel** application embedded in a Quarto doc
 
 ```{panel-python}
 import panel as pn
 
 pn.extension(design="material")
 
-slider = pn.widgets.IntSlider(name="Select a value", value=0, start=0, end=100)
+slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
 pn.Column(
     "# Hello Panel + Quarto!",
-    pn.rx("The value is {}").format(slider)
+    pn.rx("You selected: {}").format(slider),
 ).servable()
 ```
 
-A stlite application embedded in a Quarto doc
+A **stlite** application embedded in a Quarto doc
 
 ```{stlite-python}
 import streamlit as st
@@ -30,7 +30,7 @@ value = st.slider("Select a value", 0, 100, 0)
 st.write("You selected:", value)
 ```
 
-A Matplotlib application embedded in a Quarto doc
+A **Matplotlib** application embedded in a Quarto doc
 
 ```{python}
 #| label: fig-polar
@@ -49,3 +49,20 @@ ax.set_rticks([0.5, 1.2, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
+
+<!-- An extra **Panel** application
+
+```{panel-python}
+import panel as pn
+
+pn.extension()
+
+slider = pn.widgets.IntSlider(name="Select a value", value=0, start=0, end=100)
+component = pn.Column(
+    "# Hello Panel + Quarto!",
+    pn.rx("The value is {}").format(slider)
+).servable()
+pn.template.FastListTemplate(
+  title="Panel App", main=[component]
+).servable()
+``` -->
