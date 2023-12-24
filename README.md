@@ -66,17 +66,6 @@ Below we list the code block markers
 | - | - | - | 
 | `panel-app` | `holoviz/panel-app` | A filter for including Panel apps using `.servable` |
 
-### Panel-Quarto Extension Issues
-
-- We need to find a robust way to get the Panel iframe to resize its height
-  - on load
-  - if the height changes of the iframe content changes. For example if more elements are generated dynamically by the user.
-
-Also Panel convert has some issue
-
-- `--to pyodide-worker` seems not to work
-- some of the material and fast assets are not loaded via cdn
-
 ## Resources
 
 - [Creating Quarto Extensions](https://quarto.org/docs/extensions/creating.html)
