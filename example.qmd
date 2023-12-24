@@ -1,5 +1,5 @@
 ---
-title: Panel in Quarto Examples
+title: Panel in Quarto Example
 format: html
 filters:
   - holoviz/quarto
@@ -14,44 +14,33 @@ pn.extension(design="material")
 
 slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
 pn.Column(
-    "# Hello Panel + Quarto!",
     pn.rx("You selected: {}").format(slider),
 ).servable()
 ```
 
-A **Matplotlib** application embedded in a Quarto doc
+A **Panel Matplotlib** application embedded in a Quarto doc
 
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
-
+```{.panel-app-python height="300px"}
 import numpy as np
+import panel as pn
+pn.extension(design="material")
 import matplotlib.pyplot as plt
 
-r = np.arange(0, 2, 0.01)
-theta = 3 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1.2, 1.5, 2])
-ax.grid(True)
-plt.show()
+def plot(factor):
+  r = np.arange(0, 2, 0.01)
+  theta = factor * np.pi * r
+  fig, ax = plt.subplots(
+    subplot_kw = {'projection': 'polar'} 
+  )
+  ax.plot(theta, r)
+  ax.set_rticks([0.5, 1.2, 1.5, 2])
+  ax.grid(True)
+  plt.close(fig)
+  return fig
+
+slider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25,)
+plot = pn.pane.Matplotlib(pn.rx(plot)(slider), tight=True, format="svg", height=400, sizing_mode="stretch_width")
+pn.Column(
+  slider, plot, sizing_mode="stretch_width"
+).servable()
 ```
-
-<!-- An extra **Panel** application
-
-```{panel-python}
-import panel as pn
-
-pn.extension()
-
-slider = pn.widgets.IntSlider(name="Select a value", value=0, start=0, end=100)
-component = pn.Column(
-    "# Hello Panel + Quarto!",
-    pn.rx("The value is {}").format(slider)
-).servable()
-pn.template.FastListTemplate(
-  title="Panel App", main=[component]
-).servable()
-``` -->

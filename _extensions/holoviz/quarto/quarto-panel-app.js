@@ -6,11 +6,11 @@ function iframeLoaded(el) {
   }   
 }
 function updateHeight(el){
-  inner = el.contentWindow.document.getElementsByClassName("bk-panel-models-layout-Column")[0]
-  if (inner){
-    inner = el.contentWindow.document.getElementsByClassName("bk-panel-models-layout-Column")[0]
+  root = el.contentWindow.document.querySelector('[data-root-id]')
+  child = root.firstChild
+  if (child){
     el.height = "";
-    el.height = inner.scrollHeight + "px";
+    el.height = child.scrollHeight + "px";
   } else {
     setTimeout(updateHeight, 100, el)
   }
