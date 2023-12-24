@@ -5,8 +5,9 @@ ecosystem.
 
 The focus is on including HoloViz generated plots and app in a way such that they are live and interactive. This means they will probably be powered by Pyodide/ PyScript.
 
-DISCLAIMER: THIS IS AN EXPERIMENT ONLY. I DON'T WANT TO BE THE MAINTAINER OF THIS! IF ITS VALUABLE
-I HOPE IT WILL BE A HOLOVIZ MAINTAINED PROJECT ONE DAY.
+![Panel in Quarto Example](assets/gifs/example.gif)
+
+DISCLAIMER: THIS IS **AN EXPERIMENT ONLY**. THE API MIGHT CHANGE. I DON'T WANT TO BE THE MAINTAINER OF THIS! I HOPE IT WILL BE A HOLOVIZ MAINTAINED PROJECT ONE DAY.
 
 ## Prerequisities
 
@@ -56,6 +57,8 @@ pn.Column(
 ).servable()
 ```
 ````
+
+![Example Quarto Document](assets/gifs/example-readme.gif)
 
 ## Filters
 

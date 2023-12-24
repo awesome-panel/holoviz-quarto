@@ -5,7 +5,7 @@ filters:
   - holoviz/quarto
 ---
 
-A **Panel** application embedded in a Quarto doc
+This is a Panel application embedded in a Quarto doc.
 
 ```{panel-app-python}
 import panel as pn
@@ -14,33 +14,7 @@ pn.extension(design="material")
 
 slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
 pn.Column(
+    "# Hello Panel + Quarto!",
     pn.rx("You selected: {}").format(slider),
-).servable()
-```
-
-A **Panel Matplotlib** application embedded in a Quarto doc
-
-```{.panel-app-python height="300px"}
-import numpy as np
-import panel as pn
-pn.extension(design="material")
-import matplotlib.pyplot as plt
-
-def plot(factor):
-  r = np.arange(0, 2, 0.01)
-  theta = factor * np.pi * r
-  fig, ax = plt.subplots(
-    subplot_kw = {'projection': 'polar'} 
-  )
-  ax.plot(theta, r)
-  ax.set_rticks([0.5, 1.2, 1.5, 2])
-  ax.grid(True)
-  plt.close(fig)
-  return fig
-
-slider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25,)
-plot = pn.pane.Matplotlib(pn.rx(plot)(slider), tight=True, format="svg", height=400, sizing_mode="stretch_width")
-pn.Column(
-  slider, plot, sizing_mode="stretch_width"
 ).servable()
 ```
