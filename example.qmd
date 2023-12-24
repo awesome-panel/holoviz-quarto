@@ -2,13 +2,12 @@
 title: Panel in Quarto Examples
 format: html
 filters:
-  - whitphx/stlite
-  - holoviz/panel-quarto
+  - holoviz/quarto
 ---
 
 A **Panel** application embedded in a Quarto doc
 
-```{panel-python}
+```{panel-app-python}
 import panel as pn
 
 pn.extension(design="material")
@@ -18,16 +17,6 @@ pn.Column(
     "# Hello Panel + Quarto!",
     pn.rx("You selected: {}").format(slider),
 ).servable()
-```
-
-A **stlite** application embedded in a Quarto doc
-
-```{stlite-python}
-import streamlit as st
-
-st.title("Hello Stlite + Quarto!")
-value = st.slider("Select a value", 0, 100, 0)
-st.write("You selected:", value)
 ```
 
 A **Matplotlib** application embedded in a Quarto doc
@@ -40,7 +29,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 r = np.arange(0, 2, 0.01)
-theta = 4 * np.pi * r
+theta = 3 * np.pi * r
 fig, ax = plt.subplots(
   subplot_kw = {'projection': 'polar'} 
 )

@@ -15,6 +15,3 @@ function updateHeight(el){
     setTimeout(updateHeight, 100, el)
   }
 }
-window.addEventListener("load", function(event) {
-  iFrameResize({ minHeight: 140 }, ".panel")
-});
