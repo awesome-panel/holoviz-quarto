@@ -1,18 +1,10 @@
+local file_path = debug.getinfo(1, "S").source:sub(2)
+local file_dir = file_path:match("(.*[/\\])")
+local script_to_iframe_path = file_dir .. "script_to_iframe.py"
+
 function CodeBlock(el)
   if el.attr and el.attr.classes:find_if(function (c) return string.match(c, "{?panel%-app%-python}?") end) then
-    local str = [[import html
-from io import StringIO
-import sys  
-
-from panel.io.convert import script_to_html
-py = sys.stdin.read()
-ht, _ = script_to_html( 
-    StringIO(py), runtime="pyscript"
-)
-ht = html.escape(ht)
-print(f"<iframe srcdoc='{ht}' class='panel-app' onload='iframeLoaded(this)'></iframe>")]]
-      converted_code = pandoc.pipe("python", {"-c", str}, el.text)
-      print(converted_code)
+      converted_code = pandoc.pipe("python", {script_to_iframe_path}, el.text)
       quarto.doc.add_html_dependency(
         {
           name = "panel-python",

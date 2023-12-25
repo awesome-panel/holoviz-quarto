@@ -1,3 +1,4 @@
 *_files/
 script.py
-example.html
+script.*
+*.html

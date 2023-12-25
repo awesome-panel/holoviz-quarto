@@ -1,17 +1,17 @@
-function iframeLoaded(el) {
+function resizePanelApp(el) {
   console.log(el)
   if(el) {
         console.log("iframe loaded")
-        updateHeight(el)
+        updatePanelAppHeight(el)
   }   
 }
-function updateHeight(el){
+function updatePanelAppHeight(el){
   root = el.contentWindow.document.querySelector('[data-root-id]')
   child = root.firstChild
   if (child){
     el.height = "";
     el.height = child.scrollHeight + "px";
   } else {
-    setTimeout(updateHeight, 100, el)
+    setTimeout(updatePanelAppHeight, 100, el)
   }
 }

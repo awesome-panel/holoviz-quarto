@@ -1,0 +1,88 @@
+---
+title: HoloViz in Quarto using `{python}` code blocks
+format: html
+---
+
+This documents shows you how the HoloViz ecosystem can render in Quarto when using `{python}` code blocks.
+
+By default only parts of the output will be interactive. You can make it more interactive
+by using a HoloMap for hvPlot/ HoloViews or `.embed` for panel components.
+
+::: {.callout-note}
+For hvPlot, HoloViews or Panel to work with `quarto preview`, you must remember to add the
+corresponding `.extension(...)`. See
+[quarto-cli #8030](https://github.com/quarto-dev/quarto-cli/issues/8030).
+
+We recommend adding the `.extensions` once at the top of the document. You can hide the code via `#| echo: false` or *fold* it using `#| code-fold: true`.
+:::
+
+```{python}
+#| code-fold: true
+#| code-summary: "Initialization"
+import holoviews as hv
+import panel as pn
+
+hv.extension("bokeh")
+pn.extension(design="material")
+```
+
+## hvPlot
+
+This is a [hvPlot](https://hvplot.holoviz.org/index.html) plot embedded in a Quarto
+document.
+
+```{python}
+import hvplot.pandas
+import pandas as pd
+
+df=pd.DataFrame({"x": [1,2,3], "y": [1,3,2]})
+
+df.hvplot.line(x='x', y='y', height=400, responsive=True)
+```
+
+You can make plots created with a `groupby` interactive, if you add the `dynamic=False` arguments
+
+```{python}
+import hvplot.pandas
+import numpy as np
+import pandas as pd
+
+frequencies = [0.5, 0.75, 1.0, 1.25]
+
+def sine_curve(phase, freq):
+    xvals = np.arange(100)
+    yvals = np.sin(phase+freq*xvals)
+    return pd.DataFrame({'x': xvals, 'y': yvals, 'phase': phase, 'freq': freq}, columns=['x', 'y', 'phase', 'freq'])
+
+df = pd.concat([sine_curve(0, f) for f in frequencies])
+
+df.hvplot.line('x', 'y', groupby='freq', dynamic=False, responsive=True, height=400)
+```
+
+::: {.callout-warning}
+Please note the plot will become static if you change the `widget_location`. See
+[hvPlot #1241](https://github.com/holoviz/hvplot/issues/1241).
+:::
+
+
+## HoloViews
+
+```{python}
+import holoviews as hv
+import pandas as pd
+
+df=pd.DataFrame({"x": [1,2,3], "y": [1,3,2]})
+
+hv.Curve(df, kdims="x", vdims="y").opts(height=400, responsive=True)
+```
+
+## Panel
+
+```{python}
+import panel as pn
+
+slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
+pn.Column(
+    pn.rx("You selected: {}").format(slider),
+)
+```

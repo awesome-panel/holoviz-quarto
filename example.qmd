@@ -20,7 +20,7 @@ pn.Column(
 
 A **Panel Matplotlib** application embedded in a Quarto doc
 
-```{.panel-app-python height="300px"}
+```{panel-app-python}
 import numpy as np
 import panel as pn
 import matplotlib.pyplot as plt
