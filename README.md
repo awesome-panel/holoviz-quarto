@@ -77,6 +77,7 @@ The below *code block* filters can be used with the HoloViz ecosystem.
 | - | - | - | - |
 | `python` |  | A general filter for including Python | [example-python.qmd](example-python.qmd) |
 | `panel-app-python` | `holoviz/quarto` | A custom filter for including Panel apps using `.servable` | [example.qmd](example.qmd) |
+|  |  | How to use Panel with Pyscript and Quarto | [example.qmd](example-pyscript.qmd) |
 
 ## Development
 
