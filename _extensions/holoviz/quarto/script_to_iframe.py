@@ -9,6 +9,9 @@ ALLOW="accelerometer;autoplay;camera;document-domain;encrypted-media;fullscreen;
 
 def script_to_iframe(code: str, runtime: str="pyscript")->str:
     """Converts the code to a valid iframe for embedding"""
+    if runtime=="pyodide-worker":
+        # The pyodide-worker runtime generates an both a html and a js file
+        raise ValueError("pyodide-worker runtime is not supported!")
     with set_resource_mode('cdn'):
         ht, _ = script_to_html( 
             StringIO(script), runtime=runtime

@@ -45,3 +45,19 @@ pn.Column(
   slider, plot, sizing_mode="stretch_width"
 ).servable()
 ```
+
+A **Panel FastListTemplate** application embedded in a Quarto doc
+
+```{panel-app-python}
+import panel as pn
+
+pn.extension()
+
+slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
+component = pn.Column(
+    pn.rx("You selected: {}").format(slider),
+)
+pn.template.FastListTemplate(
+  title="Panel in Quarto", main=[component]
+).servable()
+```

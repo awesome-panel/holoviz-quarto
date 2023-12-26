@@ -1,0 +1,30 @@
+<script type="module" src="https://pyscript.net/releases/2023.12.1/core.js"></script>
+<style>
+.pn-container {
+    width: 100%;
+}
+.loading {  
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABcklEQVR4AWNgyNoqwVC0dTMQ/wLi/3TCv8B2lgLtZijcsgUuQX+8mYGhaBuGz+kaEiDGgGJCCkYdwFW+43/jtiv/D1x7/H/2oVv/ZRr20NYBrCXb/qcsPfs/ZRkELztx9/+7d+/g+OjNJyBxUjHITJDZhB3AU7nj/+s3b0GWURODzASbjekAzCAH+/L4LQi+/+wVikEvXr8BiZOKQWaCzCY9DRj3Hvx/49ELsOVPX775H7PoND0TISJazPoO/Rev2z1aDuDF2h37/5dtuPQ/eelZUKiR5wCm4m3/FZr3koy9Zh77/+zVG3hi3XPl4X+lFlQ1TMUkZMO3b0nEmFkPWR6WDQfcAfSLgt3Yo4D2ibAclAiXARNhxY5hlA15gXFn2jtABZEJuCh+Sb+iGFEZPQVhzMro1RuQOKkYVhkN/uoYs0Fyki4NEsJNsoPXH/+fRfsmGf3xqAMGRdds80B2TiHd8+KtmxgK6do9/wmyE9Q9BwC0YrQKZdeVgAAAAABJRU5ErkJggg==');  
+  background-repeat: no-repeat;  
+  background-position: center;
+  background-size: 20px 20px;
+  width: 50px; /* adjust to the size of your spinner image */  
+  height: 50px; /* adjust to the size of your spinner image */  
+  opacity: 0.3; 
+  margin-bottom: 10px;
+  animation: spin 2s linear infinite;
+}  
+@keyframes spin {  
+  0% { transform: rotate(0deg); }  
+  100% { transform: rotate(360deg); }  
+} 
+</style>
+<script type="module">
+    function removeLoading(){
+        const loadingElements = document.getElementsByClassName("loading");    
+        for (const element of loadingElements) {  
+            element.classList.remove("loading");
+        }
+    }
+    addEventListener('py:ready', removeLoading); 
+</script>

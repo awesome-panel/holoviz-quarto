@@ -1,20 +1,26 @@
 ---
-title: HoloViz in Quarto using `{python}` code blocks
+title: Panel and HoloViz in Quarto using `{python}` code blocks
 format: html
 ---
 
-This documents shows you how the HoloViz ecosystem can render in Quarto when using `{python}` code blocks.
+This document shows you how Panel and the HoloViz ecosystem can render in Quarto when using `{python}` code blocks.
+
+<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px">
 
 By default only parts of the output will be interactive. You can make it more interactive
 by using a HoloMap for hvPlot/ HoloViews or `.embed` for panel components.
+
+## Configuration
 
 ::: {.callout-note}
 For hvPlot, HoloViews or Panel to work with `quarto preview`, you must remember to add the
 corresponding `.extension(...)`. See
 [quarto-cli #8030](https://github.com/quarto-dev/quarto-cli/issues/8030).
 
-We recommend adding the `.extensions` once at the top of the document. You can hide the code via `#| echo: false` or *fold* it using `#| code-fold: true`.
+You may add the `.extensions` once at the top of the document. You can hide the code via `#| echo: false` or *fold* it using `#| code-fold: true`.
 :::
+
+## Examples
 
 ```{python}
 #| code-fold: true
@@ -26,7 +32,7 @@ hv.extension("bokeh")
 pn.extension(design="material")
 ```
 
-## hvPlot
+### hvPlot
 
 This is a [hvPlot](https://hvplot.holoviz.org/index.html) plot embedded in a Quarto
 document.
@@ -65,7 +71,7 @@ Please note the plot will become static if you change the `widget_location`. See
 :::
 
 
-## HoloViews
+### HoloViews
 
 ```{python}
 import holoviews as hv
@@ -76,13 +82,46 @@ df=pd.DataFrame({"x": [1,2,3], "y": [1,3,2]})
 hv.Curve(df, kdims="x", vdims="y").opts(height=400, responsive=True)
 ```
 
-## Panel
+You can browse through a collection (dictionary) of plots via [HoloMap](https://holoviews.org/reference/containers/bokeh/HoloMap.html).
+
+```{python}
+import numpy as np
+import holoviews as hv
+
+def sine_curve(phase, freq):
+    xvals = [0.1* i for i in range(100)]
+    return hv.Curve((xvals, [np.sin(phase+freq*x) for x in xvals]))
+
+frequencies = [0.5, 0.75, 1.0, 1.25]
+phases      = [0, np.pi/2, np.pi, 3*np.pi/2]
+
+curve_dict_2D = {(p,f):sine_curve(p,f) for p in phases for f in frequencies}
+
+hv.HoloMap(curve_dict_2D, kdims=['phase', 'frequency'])
+```
+
+### Panel
 
 ```{python}
 import panel as pn
 
-slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
+slider = pn.widgets.IntSlider(name="Select a value", value=2, start=0, end=10)
 pn.Column(
     pn.rx("You selected: {}").format(slider),
 )
 ```
+
+Please note that the output is not *live*, I.e. when you drag the slider nothing happens.
+
+For simple apps with a limited amount of *state* it is possible to *embed* the state. See the [Panel how-to embed state](https://panel.holoviz.org/how_to/export/embedding.html) guide.
+
+```{python}
+import panel as pn
+
+slider = pn.widgets.IntSlider(name="Select a value", value=2, start=0, end=10)
+pn.Column(
+    pn.rx("You selected: {}").format(slider),
+).embed(max_states=11, max_opts=11)
+```
+
+If you want to embed more complicated apps inside your Quarto document you can do so via `panel convert` that converts your panel app to pyodide or pyscript.

@@ -1,0 +1,172 @@
+---
+title: Panel and HoloViz in Quarto powered by PyScript
+format: html
+include-in-header:
+    - example-pyscript-header.html
+---
+
+This documents shows you how Panel and the HoloViz ecosystem can render in Quarto with live interactivity powered by PyScript.
+
+<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px">
+
+## Configuration
+
+In order to use Panel with Pyscript you will need to run `pn.extension(...)` in a `{python}` code block as you would normally do.
+
+```{python}
+import panel as pn
+
+pn.extension("deckgl", design="material")
+```
+
+In addition you would need to configure PyScript and *Panel in PyScript* once.
+
+```html
+<script type="py" config='{"packages":["panel", "hvplot", "matplotlib"]}'>
+import panel as pn
+
+pn.extension("deckgl")
+</script>
+```
+
+<script type="py" config='{"packages":["panel", "hvplot", "matplotlib"]}'>
+import panel as pn
+
+pn.extension("deckgl", design="material")
+</script>
+
+## Examples
+
+### Basic
+
+A **Panel PyScript** application embedded in a Quarto doc
+
+<div id="out-1" class="loading pn-container"></div>
+<script type="py">
+import panel as pn
+
+slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
+pn.Column(
+    pn.rx("You selected: {}").format(slider),
+).servable(target="out-1")
+</script>
+
+### Matplotlib
+
+A **Panel Matplotlib PyScript** application embedded in a Quarto doc
+
+<div id="out-2" class="loading pn-container"></div>
+<script type="py">
+import numpy as np
+import panel as pn
+import matplotlib.pyplot as plt
+
+def plot(factor):
+  r = np.arange(0, 2, 0.01)
+  theta = factor * np.pi * r
+  fig, ax = plt.subplots(
+    subplot_kw = {'projection': 'polar'} 
+  )
+  ax.plot(theta, r)
+  ax.set_rticks([0.5, 1.2, 1.5, 2])
+  ax.grid(True)
+  plt.close(fig)
+  return fig
+
+slider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25,)
+plot = pn.pane.Matplotlib(pn.rx(plot)(slider), tight=True, format="svg", height=400, sizing_mode="stretch_width")
+pn.Column(
+  slider, plot, sizing_mode="stretch_width"
+).servable(target="out-2")
+</script>
+
+### hvPlot
+
+A **Panel hvPlot PyScript** application embedded in a Quarto doc
+
+<div id="out-3" class="loading pn-container"></div>
+<script type="py">
+import hvplot.pandas
+import numpy as np
+import panel as pn
+import pandas as pd
+
+frequencies = [0.5, 0.75, 1.0, 1.25]
+
+def sine_curve(phase, freq):
+    xvals = np.arange(100)
+    yvals = np.sin(phase+freq*xvals)
+    return pd.DataFrame({'x': xvals, 'y': yvals, 'phase': phase, 'freq': freq}, columns=['x', 'y', 'phase', 'freq'])
+
+df = pd.concat([sine_curve(0, f) for f in frequencies])
+
+plot = df.hvplot.line('x', 'y', groupby='freq', responsive=True, height=400, widget_location="top_left")
+pn.panel(plot).servable(target="out-3")
+</script>
+
+### Deck.gl
+
+<div id="out-4" class="loading pn-container"></div>
+<script type="py">
+import panel as pn
+
+MAPBOX_KEY = "pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ"
+
+def json_spec(zoom=6):
+    return{
+        "initialViewState": {
+            "bearing": -27.36,
+            "latitude": 52.2323,
+            "longitude": -1.415,
+            "maxZoom": 15,
+            "minZoom": 5,
+            "pitch": 40.5,
+            "zoom": zoom
+        },
+        "layers": [{
+            "@@type": "HexagonLayer",
+            "autoHighlight": True,
+            "coverage": 1,
+            "data": "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv",
+            "elevationRange": [0, 3000],
+            "elevationScale": 50,
+            "extruded": True,
+            "getPosition": "@@=[lng, lat]",
+            "id": "8a553b25-ef3a-489c-bbe2-e102d18a3211",
+            "pickable": True
+        }],
+        "mapStyle": "mapbox://styles/mapbox/dark-v9",
+        "views": [
+            {"@@type": "MapView", "controller": True}
+        ]
+    }
+
+slider = pn.widgets.IntSlider(value=6, start=3, end=10, name="Zoom")
+deck_gl = pn.pane.DeckGL(pn.rx(json_spec)(slider), mapbox_api_key=MAPBOX_KEY, sizing_mode='stretch_width', height=600)
+pn.Column(slider, deck_gl).servable(target="out-4")
+</script>
+
+### Editor
+
+I would really like to include an example of using the PyScript `py-editor`. But currently I don't know how to get it working.
+See [PyScript #1907](https://github.com/pyscript/pyscript/discussions/1907).
+
+
+```html
+<script type="py-editor">
+import panel as pn
+
+pn.extension()
+
+slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
+pn.Column(
+    pn.rx("You selected: {}").format(slider),
+).servable(target="editor")
+</script>
+<div id="editor" class="loading pn-container"></div>
+```
+
+There are other `py-editor` improvements I would really like.
+
+- [Run Editor on page load | PyScript #1909](https://github.com/pyscript/pyscript/discussions/1909)
+- [Support tab indentation | PyScript #1908](https://github.com/pyscript/pyscript/discussions/1908)
