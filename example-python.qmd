@@ -1,36 +1,30 @@
 ---
-title: Panel and HoloViz in Quarto using `{python}` code blocks
+title: Python
 format: html
 ---
 
-This document shows you how Panel and the HoloViz ecosystem can render in Quarto when using `{python}` code blocks.
+This guide shows you how how to use the HoloViz ecosystem with `{python}` code blocks.
 
-<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px">
-
-By default only parts of the output will be interactive. You can make it more interactive
-by using a HoloMap for hvPlot/ HoloViews or `.embed` for panel components.
+<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
 
 ## Configuration
 
 ::: {.callout-note}
-For hvPlot, HoloViews or Panel to work with `quarto preview`, you must remember to add the
-corresponding `.extension(...)`. See
-[quarto-cli #8030](https://github.com/quarto-dev/quarto-cli/issues/8030).
+For hvPlot, HoloViews or Panel to work with Quarto, you must remember to run the
+the `.extension` function to include the relevant css and javascript files.
 
-You may add the `.extensions` once at the top of the document. You can hide the code via `#| echo: false` or *fold* it using `#| code-fold: true`.
+You can hide the code via `#| echo: false` or *fold* it using `#| code-fold: true`.
 :::
 
-## Examples
-
 ```{python}
-#| code-fold: true
-#| code-summary: "Initialization"
 import holoviews as hv
 import panel as pn
 
-hv.extension("bokeh")
+hv.extension("bokeh") # same as hvplot.extension("bokeh")
 pn.extension(design="material")
 ```
+
+## Examples
 
 ### hvPlot
 
@@ -46,7 +40,7 @@ df=pd.DataFrame({"x": [1,2,3], "y": [1,3,2]})
 df.hvplot.line(x='x', y='y', height=400, responsive=True)
 ```
 
-You can make plots created with a `groupby` interactive, if you add the `dynamic=False` arguments
+You can make widgets created with a `groupby` argument interactive, if you add the `dynamic=False` arguments
 
 ```{python}
 import hvplot.pandas
@@ -66,7 +60,7 @@ df.hvplot.line('x', 'y', groupby='freq', dynamic=False, responsive=True, height=
 ```
 
 ::: {.callout-warning}
-Please note the plot will become static if you change the `widget_location`. See
+Please note that changing the `widget_location` currently does not work. See
 [hvPlot #1241](https://github.com/holoviz/hvplot/issues/1241).
 :::
 
@@ -88,6 +82,8 @@ You can browse through a collection (dictionary) of plots via [HoloMap](https://
 import numpy as np
 import holoviews as hv
 
+# hv.output(widget_location="top_left")
+
 def sine_curve(phase, freq):
     xvals = [0.1* i for i in range(100)]
     return hv.Curve((xvals, [np.sin(phase+freq*x) for x in xvals]))
@@ -97,8 +93,14 @@ phases      = [0, np.pi/2, np.pi, 3*np.pi/2]
 
 curve_dict_2D = {(p,f):sine_curve(p,f) for p in phases for f in frequencies}
 
-hv.HoloMap(curve_dict_2D, kdims=['phase', 'frequency'])
+hv.HoloMap(curve_dict_2D, kdims=['phase', 'frequency']).opts(responsive=True, height=300)
 ```
+
+You can change the default `widget_location` via `hv.output(widget_location="top_left")`
+
+::: {.callout-note}
+You may display HoloMaps as `gif` or `mp4`. See [`hv.output` settings](https://holoviews.org/user_guide/Applying_Customizations.html#available-hv-output-settings).
+:::
 
 ### Panel
 
@@ -111,7 +113,7 @@ pn.Column(
 )
 ```
 
-Please note that the output is not *live*, I.e. when you drag the slider nothing happens.
+Please note that **the output above is not live and interactive**. When you drag the slider nothing happens.
 
 For simple apps with a limited amount of *state* it is possible to *embed* the state. See the [Panel how-to embed state](https://panel.holoviz.org/how_to/export/embedding.html) guide.
 
@@ -124,4 +126,26 @@ pn.Column(
 ).embed(max_states=11, max_opts=11)
 ```
 
-If you want to embed more complicated apps inside your Quarto document you can do so via `panel convert` that converts your panel app to pyodide or pyscript.
+Now the text updates when you drag the slider above.
+
+You may also [Link Plot Parameters in Javascript](https://panel.holoviz.org/how_to/links/link_plots.html#link-holoviews-plots).
+
+```{python}
+import hvplot.pandas
+import pandas as pd
+import panel as pn
+
+df=pd.DataFrame({"x": [1,2,3], "y": [1,3,2]})
+plot = df.hvplot.line(x='x', y='y', height=400, responsive=True)
+
+width_slider = pn.widgets.FloatSlider(name="Line Width", start=3, end=10, step=0.1)
+width_slider.jslink(plot, value="glyph.line_width")
+pn.Column(width_slider, plot)
+```
+
+For more on *Javascript linking* check out the [Link Parameters Guides](https://panel.holoviz.org/how_to/links/index.html).
+
+::: {.callout-warning}
+Please note that hvPlot and HoloViews plots like HoloMaps with widgets currently do not work
+inside Panel Layouts in Quarto documents. See [Panel #6131](https://github.com/holoviz/panel/issues/6131).
+:::

@@ -1,14 +1,14 @@
 # Quarto-HoloViz
 
-The purpose of this project is to make it easy to use Panel and the rest of the HoloViz ecosystem with Quarto.
+The purpose of this project is to **make it easy to use the HoloViz ecosystem with Quarto**.
 
-We do this by providing *how-to* guides as well as Quarto extensions.
+We do this by providing the `quarto-holoviz` extension as well as *how-to* guides.
 
-<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px">
+<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
 
-![Panel in Quarto Example](assets/gifs/example.gif)
+## Disclaimer
 
-DISCLAIMER: THIS IS **AN EXPERIMENT ONLY**. THE API MIGHT CHANGE. I DON'T WANT TO BE THE MAINTAINER OF THIS! I HOPE IT WILL BE A HOLOVIZ MAINTAINED PROJECT ONE DAY.
+This is currently **an experimental project**. If this project is useful I hope it can become an official HoloViz project one day.
 
 ## Prerequisities
 

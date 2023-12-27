@@ -3,3 +3,7 @@ script.py
 script.*
 *.html
 !example-pyscript-header.html
+
+/.quarto/
+_output/
+_site/

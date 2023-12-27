@@ -1,13 +1,13 @@
 ---
-title: Panel and HoloViz in Quarto powered by PyScript
+title: PyScript
 format: html
 include-in-header:
     - example-pyscript-header.html
 ---
 
-This documents shows you how Panel and the HoloViz ecosystem can render in Quarto with live interactivity powered by PyScript.
+This guide shows you how to use HoloViz and PyScript to create live, interactive documents with Quarto.
 
-<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px">
+<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
 
 ## Configuration
 
@@ -19,7 +19,7 @@ import panel as pn
 pn.extension("deckgl", design="material")
 ```
 
-In addition you would need to configure PyScript and *Panel in PyScript* once.
+In addition you must also configure PyScript in a `<script type="py" ...>` tag
 
 ```html
 <script type="py" config='{"packages":["panel", "hvplot", "matplotlib"]}'>

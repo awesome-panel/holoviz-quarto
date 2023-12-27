@@ -1,13 +1,23 @@
 ---
-title: Panel in Quarto Example
+title: Panel Convert
 format: html
 filters:
   - holoviz/quarto
 ---
 
-A **Panel** application embedded in a Quarto doc
+This guide shows you how to use the `{panel-convert-python}` filter to create live, interactive documents with Quarto.
 
-```{panel-app-python}
+With this filter you insert entire, templated applications into your documents. The downside is that the load time increases linearly with the number of applications you insert.
+
+<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
+
+## Examples
+
+### Panel
+
+A **Panel** application converted to Pyodide and embedded in a Quarto doc
+
+```{panel-convert-python}
 import panel as pn
 
 pn.extension(design="material")
@@ -18,9 +28,11 @@ pn.Column(
 ).servable()
 ```
 
+### Panel Matplotlib
+
 A **Panel Matplotlib** application embedded in a Quarto doc
 
-```{panel-app-python}
+```{panel-convert-python}
 import numpy as np
 import panel as pn
 import matplotlib.pyplot as plt
@@ -46,9 +58,11 @@ pn.Column(
 ).servable()
 ```
 
+### Panel FastListTemplate
+
 A **Panel FastListTemplate** application embedded in a Quarto doc
 
-```{panel-app-python}
+```{panel-convert-python}
 import panel as pn
 
 pn.extension()

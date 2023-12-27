@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Quarto-HoloViz"
+  sidebar:
+    style: "docked"
+    search: true
+    logo: https://holoviz.org/_static/holoviz-logo-unstacked.svg
+    logo-href: https://holoviz.org
+    tools:
+      - icon: twitter
+        href: https://twitter.com/holoviz_org
+      - icon: linkedin
+        href: https://www.linkedin.com/company/panel-org
+      - icon: github
+        href: https://github.com/awesome-panel/quarto-holoviz
+    contents:
+    - section: "Getting Started"
+      contents:
+      - href: index.qmd
+        text: Home
+    - section: "How-to"
+      contents:
+      - example-python.qmd
+      - example-pyscript.qmd
+      - example-panel-convert-python.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: _quarto.css
+    toc: true
