@@ -17,11 +17,11 @@ website:
       - icon: github
         href: https://github.com/awesome-panel/quarto-holoviz
     contents:
-    - section: "Getting Started"
-      contents:
-      - href: index.qmd
-        text: Home
-    - section: "How-to"
+    - href: index.qmd
+      text: Introduction
+    - href: getting-started.qmd
+      text: Getting Started
+    - section: "How-to" 
       contents:
       - example-python.qmd
       - example-pyscript.qmd
