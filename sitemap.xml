@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://awesome-panel.github.io/quarto-holoviz/getting-started.html</loc>
+    <lastmod>2023-12-28T05:17:25.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.github.io/quarto-holoviz/index.html</loc>
+    <lastmod>2023-12-28T05:17:17.763Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.github.io/quarto-holoviz/example-panel-convert-python.html</loc>
+    <lastmod>2023-12-28T05:17:01.203Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.github.io/quarto-holoviz/example-python.html</loc>
+    <lastmod>2023-12-28T05:17:17.335Z</lastmod>
+  </url>
+  <url>
+    <loc>https://awesome-panel.github.io/quarto-holoviz/example-pyscript.html</loc>
+    <lastmod>2023-12-28T05:17:24.547Z</lastmod>
+  </url>
+</urlset>

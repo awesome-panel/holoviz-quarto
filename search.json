@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "getting-started.html",
+    "href": "getting-started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "This guide will explain how to get started with Quarto for Python and the quarto-holoviz extension.\n\n\nYou can install everything you need with Conda\nconda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib\nThis will\n\nCreate a Python environment named quarto-holoviz.\nInstall Quarto.\nInstall jupyter, panel and other Python packages\n\nFor alternative installation methods checkout the Quarto Getting Started Guide.\n\n\n\nYou can install the quarto-holoviz extension in your Quarto project via\nquarto add awesome-panel/quarto-holoviz\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory.\nNow put this in the header of your document, or in the _quarto.yml file:\nfilters:\n  - holoviz/quarto\nNow you may use the {panel-convert-python} filter as explained in the How to use Panel Convert section."
+  },
+  {
+    "objectID": "getting-started.html#installing-quarto",
+    "href": "getting-started.html#installing-quarto",
+    "title": "Getting Started",
+    "section": "",
+    "text": "You can install everything you need with Conda\nconda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib\nThis will\n\nCreate a Python environment named quarto-holoviz.\nInstall Quarto.\nInstall jupyter, panel and other Python packages\n\nFor alternative installation methods checkout the Quarto Getting Started Guide."
+  },
+  {
+    "objectID": "getting-started.html#installing-the-quarto-holoviz-extension",
+    "href": "getting-started.html#installing-the-quarto-holoviz-extension",
+    "title": "Getting Started",
+    "section": "",
+    "text": "You can install the quarto-holoviz extension in your Quarto project via\nquarto add awesome-panel/quarto-holoviz\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory.\nNow put this in the header of your document, or in the _quarto.yml file:\nfilters:\n  - holoviz/quarto\nNow you may use the {panel-convert-python} filter as explained in the How to use Panel Convert section."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Introduction\nThe purpose of this project is to make it easy to use the HoloViz ecosystem with Quarto.\nWe do this by providing the quarto-holoviz extension as well as the how-to guides listed in the sidebar.\nThe HoloViz blog is currently created with the help of Quarto. Check out the source code here.\n\n\n\n\nHoloViz Quarto Example"
+  },
+  {
+    "objectID": "example-panel-convert-python.html",
+    "href": "example-panel-convert-python.html",
+    "title": "Panel Convert",
+    "section": "",
+    "text": "This guide shows you how to use the {panel-convert-python} filter to create live, interactive documents with Quarto.\nWith this filter you can insert entire, templated applications into your documents. The downside is that the load time increases linearly with the number of applications you insert."
+  },
+  {
+    "objectID": "example-panel-convert-python.html#configuration",
+    "href": "example-panel-convert-python.html#configuration",
+    "title": "Panel Convert",
+    "section": "Configuration",
+    "text": "Configuration\nYou will need to install and configure the quarto-holoviz extension as described in the Getting Started guide."
+  },
+  {
+    "objectID": "example-panel-convert-python.html#examples",
+    "href": "example-panel-convert-python.html#examples",
+    "title": "Panel Convert",
+    "section": "Examples",
+    "text": "Examples\n\nPanel\nA Panel application converted to Pyodide and embedded in a Quarto doc\n\n\n\n\n\nPanel Matplotlib\nA Panel Matplotlib application embedded in a Quarto doc\n\n\n\n\n\nPanel FastListTemplate\nA Panel FastListTemplate application embedded in a Quarto doc"
+  },
+  {
+    "objectID": "example-python.html",
+    "href": "example-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "This guide shows you how to use the HoloViz ecosystem with Quarto {python} code blocks."
+  },
+  {
+    "objectID": "example-python.html#configuration",
+    "href": "example-python.html#configuration",
+    "title": "Python",
+    "section": "Configuration",
+    "text": "Configuration\n\n\n\n\n\n\nNote\n\n\n\nFor hvPlot, HoloViews or Panel to work with Quarto, you must remember to run the the .extension function to include the relevant css and javascript files.\n\n\n\nimport holoviews as hv\nimport panel as pn\n\nhv.extension(\"bokeh\") # same as hvplot.extension(\"bokeh\")\npn.extension(design=\"material\")"
+  },
+  {
+    "objectID": "example-python.html#examples",
+    "href": "example-python.html#examples",
+    "title": "Python",
+    "section": "Examples",
+    "text": "Examples\n\nhvPlot\nThis is a hvPlot plot embedded in a Quarto document.\n\nimport hvplot.pandas\nimport pandas as pd\n\ndf=pd.DataFrame({\"x\": [1,2,3], \"y\": [1,3,2]})\n\ndf.hvplot.line(x='x', y='y', height=400, responsive=True)\n\n\n\n\n\n  \n\n\n\n\nYou can make widgets created with a groupby argument interactive, if you add the dynamic=False arguments\n\nimport hvplot.pandas\nimport numpy as np\nimport pandas as pd\n\nfrequencies = [0.5, 0.75, 1.0, 1.25]\n\ndef sine_curve(phase, freq):\n    xvals = np.arange(100)\n    yvals = np.sin(phase+freq*xvals)\n    return pd.DataFrame({'x': xvals, 'y': yvals, 'phase': phase, 'freq': freq}, columns=['x', 'y', 'phase', 'freq'])\n\ndf = pd.concat([sine_curve(0, f) for f in frequencies])\n\ndf.hvplot.line('x', 'y', groupby='freq', dynamic=False, responsive=True, height=400)\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nPlease note that changing the widget_location currently does not work. See hvPlot #1241.\n\n\n\n\nHoloViews\n\nimport holoviews as hv\nimport pandas as pd\n\ndf=pd.DataFrame({\"x\": [1,2,3], \"y\": [1,3,2]})\n\nhv.Curve(df, kdims=\"x\", vdims=\"y\").opts(height=400, responsive=True)\n\n\n\n\n\n  \n\n\n\n\nYou can browse through a collection (dictionary) of plots via HoloMap.\n\nimport numpy as np\nimport holoviews as hv\n\n# hv.output(widget_location=\"top_left\")\n\ndef sine_curve(phase, freq):\n    xvals = [0.1* i for i in range(100)]\n    return hv.Curve((xvals, [np.sin(phase+freq*x) for x in xvals]))\n\nfrequencies = [0.5, 0.75, 1.0, 1.25]\nphases      = [0, np.pi/2, np.pi, 3*np.pi/2]\n\ncurve_dict_2D = {(p,f):sine_curve(p,f) for p in phases for f in frequencies}\n\nhv.HoloMap(curve_dict_2D, kdims=['phase', 'frequency']).opts(responsive=True, height=300)\n\n\n\n\n\n  \n\n\n\n\nYou can change the default widget_location via hv.output(widget_location=\"top_left\")\n\n\n\n\n\n\nNote\n\n\n\nYou may display HoloMaps as gif or mp4. See hv.output settings.\n\n\n\n\nPanel\n\nimport panel as pn\n\nslider = pn.widgets.IntSlider(name=\"Select a value\", value=2, start=0, end=10)\npn.Column(\n    pn.rx(\"You selected: {}\").format(slider),\n)\n\n\n\n\n\n  \n\n\n\n\nPlease note that the output above is not live and interactive. When you drag the slider nothing happens.\nFor simple apps with a limited amount of state it is possible to embed the state. See the Panel how-to embed state guide.\n\nimport panel as pn\n\nslider = pn.widgets.IntSlider(name=\"Select a value\", value=2, start=0, end=10)\npn.Column(\n    pn.rx(\"You selected: {}\").format(slider),\n).embed(max_states=11, max_opts=11)\n\n\n  \n\n\n\n\nNow the text updates when you drag the slider above.\nYou may also Link Plot Parameters in Javascript.\n\nimport hvplot.pandas\nimport pandas as pd\nimport panel as pn\n\ndf=pd.DataFrame({\"x\": [1,2,3], \"y\": [1,3,2]})\nplot = df.hvplot.line(x='x', y='y', height=400, responsive=True)\n\nwidth_slider = pn.widgets.FloatSlider(name=\"Line Width\", start=3, end=10, step=0.1)\nwidth_slider.jslink(plot, value=\"glyph.line_width\")\npn.Column(width_slider, plot)\n\n\n\n\n\n\n\n\n  \n\n\n\n\nFor more on Javascript linking check out the Link Parameters Guides.\n\n\n\n\n\n\nWarning\n\n\n\nPlease note that hvPlot and HoloViews plots like HoloMaps with widgets currently do not work inside Panel Layouts in Quarto documents. See Panel #6131."
+  },
+  {
+    "objectID": "example-pyscript.html",
+    "href": "example-pyscript.html",
+    "title": "PyScript",
+    "section": "",
+    "text": "This guide shows you how to use HoloViz and PyScript to create live, interactive documents with Quarto."
+  },
+  {
+    "objectID": "example-pyscript.html#configuration",
+    "href": "example-pyscript.html#configuration",
+    "title": "PyScript",
+    "section": "Configuration",
+    "text": "Configuration\nIn order to use Panel with Pyscript you will need to run pn.extension(...) in a {python} code block as you would normally do.\n\nimport panel as pn\n\npn.extension(\"deckgl\", design=\"material\")\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nIn addition you must also configure PyScript in a &lt;script type=\"py\" ...&gt; tag\n&lt;script type=\"py\" config='{\"packages\":[\"panel\", \"hvplot\", \"matplotlib\"]}'&gt;\nimport panel as pn\n\npn.extension(\"deckgl\")\n&lt;/script&gt;"
+  },
+  {
+    "objectID": "example-pyscript.html#examples",
+    "href": "example-pyscript.html#examples",
+    "title": "PyScript",
+    "section": "Examples",
+    "text": "Examples\n\nBasic\nA Panel PyScript application embedded in a Quarto doc\n\n\n\n\n\n\nMatplotlib\nA Panel Matplotlib PyScript application embedded in a Quarto doc\n\n\n\n\n\n\nhvPlot\nA Panel hvPlot PyScript application embedded in a Quarto doc\n\n\n\n\n\n\nDeck.gl\n\n\n\n\n\n\nEditor\nI would really like to include an example of using the PyScript py-editor. But currently I don’t know how to get it working. See PyScript #1907.\n&lt;script type=\"py-editor\"&gt;\nimport panel as pn\n\npn.extension()\n\nslider = pn.widgets.IntSlider(name=\"Select a value\", value=10, start=0, end=100)\npn.Column(\n    pn.rx(\"You selected: {}\").format(slider),\n).servable(target=\"editor\")\n&lt;/script&gt;\n&lt;div id=\"editor\" class=\"loading pn-container\"&gt;&lt;/div&gt;\nThere are other py-editor improvements I would really like.\n\nRun Editor on page load | PyScript #1909\nSupport tab indentation | PyScript #1908"
+  }
+]

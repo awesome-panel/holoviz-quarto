@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quarto-HoloViz - Panel Convert</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/quarto-panel-convert/quarto-panel-convert.js"></script>
+<link href="site_libs/quarto-contrib/quarto-panel-convert/quarto-panel-convert.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="_quarto.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./example-python.html">How-to</a></li><li class="breadcrumb-item"><a href="./example-panel-convert-python.html">Panel Convert</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://twitter.com/holoviz_org" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
+    <a href="https://www.linkedin.com/company/panel-org" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/awesome-panel/quarto-holoviz" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">How-to</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-pyscript.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PyScript</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-panel-convert-python.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Panel Convert</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#configuration" id="toc-configuration" class="nav-link active" data-scroll-target="#configuration">Configuration</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#panel" id="toc-panel" class="nav-link" data-scroll-target="#panel">Panel</a></li>
+  <li><a href="#panel-matplotlib" id="toc-panel-matplotlib" class="nav-link" data-scroll-target="#panel-matplotlib">Panel Matplotlib</a></li>
+  <li><a href="#panel-fastlisttemplate" id="toc-panel-fastlisttemplate" class="nav-link" data-scroll-target="#panel-fastlisttemplate">Panel FastListTemplate</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Panel Convert</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This guide shows you how to use the <code>{panel-convert-python}</code> filter to create live, interactive documents with Quarto.</p>
+<p>With this filter you can insert entire, templated applications into your documents. The downside is that the load time increases linearly with the number of applications you insert.</p>
+<p><img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px"></p>
+<section id="configuration" class="level2">
+<h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
+<p>You will need to install and configure the <code>quarto-holoviz</code> extension as described in the <a href="./getting-started.html">Getting Started</a> guide.</p>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<section id="panel" class="level3">
+<h3 class="anchored" data-anchor-id="panel">Panel</h3>
+<p>A <strong>Panel</strong> application converted to Pyodide and embedded in a Quarto doc</p>
+
+<iframe frameborder="0" srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <meta charset=&quot;utf-8&quot;>
+    <title>Panel Application</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:300,400,500&quot; type=&quot;text/css&quot; />
+    <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block&quot; type=&quot;text/css&quot; />
+
+<link rel=&quot;stylesheet&quot; href=&quot;https://pyscript.net/releases/2023.05.1/pyscript.css&quot; />
+<link rel=&quot;stylsheet&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/pyscript.css&quot; />
+<style type=&quot;text/css&quot;>
+:host(.pn-loading),
+.pn-loading {
+  overflow: hidden;
+}
+
+:host(.pn-loading):before,
+.pn-loading:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: '';
+  z-index: 1000;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50%;
+  border-width: 1px;
+  cursor: progress;
+}
+
+:host(.pn-loading) .pn-loading-msg,
+.pn-loading .pn-loading-msg {
+  position: absolute;
+  top: 72%;
+  font-size: 2em;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+
+:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {
+  background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=&quot;);
+  background-size: auto calc(min(50%, 400px));
+}
+</style><script defer src=&quot;https://pyscript.net/releases/2023.05.1/pyscript.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/material-components-web@7.0.0/dist/material-components-web.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/panel.min.js&quot;></script>
+
+<script type=&quot;text/javascript&quot;>
+  Bokeh.set_log_level(&quot;info&quot;);
+</script>  </head>
+  <body class=&quot;pn-loading pn-arc&quot;>
+    <div id=&quot;d9d40f32-ca17-42f5-abb2-23817be6f9a2&quot; data-root-id=&quot;p1002&quot; style=&quot;display: contents;&quot;></div>
+  <div id=&quot;b4c082a3-b9e1-4e78-be9e-f1d36dd4dd74&quot; data-root-id=&quot;p1027&quot; style=&quot;display: contents;&quot;></div>
+  <div id=&quot;acd95667-a14f-4bbe-b9b0-354bdbe8740d&quot; data-root-id=&quot;p1028&quot; style=&quot;display: contents;&quot;></div>
+  <py-config>
+    packages = ['https://cdn.holoviz.org/panel/wheels/bokeh-3.3.2-py3-none-any.whl','https://cdn.holoviz.org/panel/1.3.6/dist/wheels/panel-1.3.6-py3-none-any.whl','pyodide-http==0.2.1']
+    </py-config>
+    <py-script>
+    import asyncio
+
+    from panel.io.pyodide import init_doc, write_doc
+
+    init_doc()
+
+    import panel as pn
+
+    pn.extension(design=&quot;material&quot;)
+
+    slider = pn.widgets.IntSlider(name=&quot;Select a value&quot;, value=10, start=0, end=100)
+    pn.Column(
+        pn.rx(&quot;You selected: {}&quot;).format(slider),
+    ).servable()
+
+    asyncio.ensure_future(write_doc());</py-script>
+    <script type=&quot;application/json&quot; id=&quot;p1029&quot;>
+      {&quot;b70c0aba-f868-4bb3-b307-8c84c9cc6640&quot;:{&quot;version&quot;:&quot;3.3.2&quot;,&quot;title&quot;:&quot;Panel Application&quot;,&quot;roots&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1002&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Column00128&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1010&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1014&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1006&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.jsdelivr.net/npm/material-components-web@7.0.0/dist/material-components-web.min.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1007&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/default.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1008&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/material_variables.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1009&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/material.css&quot;}}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Row&quot;,&quot;id&quot;:&quot;p1003&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Row00118&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1010&quot;},{&quot;id&quot;:&quot;p1014&quot;},{&quot;id&quot;:&quot;p1006&quot;},{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1008&quot;},{&quot;id&quot;:&quot;p1009&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Row&quot;,&quot;id&quot;:&quot;p1004&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Row00127&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1010&quot;},{&quot;id&quot;:&quot;p1014&quot;},{&quot;id&quot;:&quot;p1006&quot;},{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1008&quot;},{&quot;id&quot;:&quot;p1009&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1005&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;WidgetBox00126&quot;,&quot;css_classes&quot;:[&quot;panel-widget-box&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1010&quot;},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1013&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/widgetbox.css&quot;}},{&quot;id&quot;:&quot;p1014&quot;},{&quot;id&quot;:&quot;p1006&quot;},{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1008&quot;},{&quot;id&quot;:&quot;p1009&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Slider&quot;,&quot;id&quot;:&quot;p1011&quot;,&quot;attributes&quot;:{&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1010&quot;},{&quot;id&quot;:&quot;p1006&quot;},{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1008&quot;},{&quot;id&quot;:&quot;p1009&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;title&quot;:&quot;Select a value&quot;,&quot;start&quot;:0,&quot;end&quot;:100,&quot;value&quot;:10}}]}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1015&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Column00123&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1010&quot;},{&quot;id&quot;:&quot;p1014&quot;},{&quot;id&quot;:&quot;p1006&quot;},{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1008&quot;},{&quot;id&quot;:&quot;p1009&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.markup.HTML&quot;,&quot;id&quot;:&quot;p1018&quot;,&quot;attributes&quot;:{&quot;css_classes&quot;:[&quot;markdown&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1010&quot;},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1017&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/markdown.css&quot;}},{&quot;id&quot;:&quot;p1006&quot;},{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1008&quot;},{&quot;id&quot;:&quot;p1009&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;text&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;You selected: 10&amp;amp;lt;/p&amp;amp;gt;\n&quot;}}]}}]}}]}}]}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.location.Location&quot;,&quot;id&quot;:&quot;p1027&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;location&quot;,&quot;reload&quot;:false}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.browser.BrowserInfo&quot;,&quot;id&quot;:&quot;p1028&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;browser_info&quot;}}],&quot;defs&quot;:[{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;ReactiveHTML1&quot;},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FlexBox1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;align_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;align_items&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;flex_direction&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;row&quot;},{&quot;name&quot;:&quot;flex_wrap&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;wrap&quot;},{&quot;name&quot;:&quot;justify_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FloatPanel1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;config&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;contained&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;right-top&quot;},{&quot;name&quot;:&quot;offsetx&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;offsety&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;theme&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;primary&quot;},{&quot;name&quot;:&quot;status&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;normalized&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;GridStack1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;mode&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;warn&quot;},{&quot;name&quot;:&quot;ncols&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;nrows&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;allow_resize&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;allow_drag&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;state&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;drag1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;slider_width&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:5},{&quot;name&quot;:&quot;slider_color&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;black&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:50}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;click1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;terminal_output&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;debug_name&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;clears&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;copy_to_clipboard1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;fill&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;none&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FastWrapper1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;object&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;style&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationAreaBase1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationArea1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;notifications&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;types&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;warning&quot;],[&quot;background&quot;,&quot;#ffc107&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-exclamation-triangle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]},{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;info&quot;],[&quot;background&quot;,&quot;#007bff&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-info-circle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]}]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;Notification&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;background&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;duration&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:3000},{&quot;name&quot;:&quot;icon&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;message&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;notification_type&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;_destroyed&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:false}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;TemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;BootstrapTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;MaterialTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]}]}}
+    </script>
+    <script type=&quot;text/javascript&quot;>
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('p1029').textContent;
+              const render_items = [{&quot;docid&quot;:&quot;b70c0aba-f868-4bb3-b307-8c84c9cc6640&quot;,&quot;roots&quot;:{&quot;p1002&quot;:&quot;d9d40f32-ca17-42f5-abb2-23817be6f9a2&quot;,&quot;p1027&quot;:&quot;b4c082a3-b9e1-4e78-be9e-f1d36dd4dd74&quot;,&quot;p1028&quot;:&quot;acd95667-a14f-4bbe-b9b0-354bdbe8740d&quot;},&quot;root_ids&quot;:[&quot;p1002&quot;,&quot;p1027&quot;,&quot;p1028&quot;]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log(&quot;Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing&quot;);
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != &quot;loading&quot;) fn();
+        else document.addEventListener(&quot;DOMContentLoaded&quot;, fn);
+      })();
+    </script>
+  </body>
+</html>" class="panel-app" onload="resizePanelApp(this)" allow="accelerometer;autoplay;camera;document-domain;encrypted-media;fullscreen;gamepad;geolocation;gyroscope;layout-animations;legacy-image-formats;microphone;oversized-images;payment;publickey-credentials-get;speaker-selection;sync-xhr;unoptimized-images;unsized-media;screen-wake-lock;web-share;xr-spatial-tracking"></iframe>
+
+</section>
+<section id="panel-matplotlib" class="level3">
+<h3 class="anchored" data-anchor-id="panel-matplotlib">Panel Matplotlib</h3>
+<p>A <strong>Panel Matplotlib</strong> application embedded in a Quarto doc</p>
+
+<iframe frameborder="0" srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <meta charset=&quot;utf-8&quot;>
+    <title>Panel Application</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:300,400,500&quot; type=&quot;text/css&quot; />
+    <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block&quot; type=&quot;text/css&quot; />
+
+<link rel=&quot;stylesheet&quot; href=&quot;https://pyscript.net/releases/2023.05.1/pyscript.css&quot; />
+<link rel=&quot;stylsheet&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/pyscript.css&quot; />
+<style type=&quot;text/css&quot;>
+:host(.pn-loading),
+.pn-loading {
+  overflow: hidden;
+}
+
+:host(.pn-loading):before,
+.pn-loading:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: '';
+  z-index: 1000;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50%;
+  border-width: 1px;
+  cursor: progress;
+}
+
+:host(.pn-loading) .pn-loading-msg,
+.pn-loading .pn-loading-msg {
+  position: absolute;
+  top: 72%;
+  font-size: 2em;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+
+:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {
+  background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=&quot;);
+  background-size: auto calc(min(50%, 400px));
+}
+</style><script defer src=&quot;https://pyscript.net/releases/2023.05.1/pyscript.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/material-components-web@7.0.0/dist/material-components-web.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/panel.min.js&quot;></script>
+
+<script type=&quot;text/javascript&quot;>
+  Bokeh.set_log_level(&quot;info&quot;);
+</script>  </head>
+  <body class=&quot;pn-loading pn-arc&quot;>
+    <div id=&quot;b62c6cc0-24fb-4b7b-8a97-0f2820e0555c&quot; data-root-id=&quot;p1002&quot; style=&quot;display: contents;&quot;></div>
+  <div id=&quot;e0fe76fa-8bcc-4eb3-bd5e-807d7214ea39&quot; data-root-id=&quot;p1013&quot; style=&quot;display: contents;&quot;></div>
+  <div id=&quot;a5f0553c-9753-421b-8c04-da3a9b458ba3&quot; data-root-id=&quot;p1014&quot; style=&quot;display: contents;&quot;></div>
+  <py-config>
+    packages = ['https://cdn.holoviz.org/panel/wheels/bokeh-3.3.2-py3-none-any.whl','https://cdn.holoviz.org/panel/1.3.6/dist/wheels/panel-1.3.6-py3-none-any.whl','pyodide-http==0.2.1','matplotlib','numpy']
+    </py-config>
+    <py-script>
+    import asyncio
+
+    from panel.io.pyodide import init_doc, write_doc
+
+    init_doc()
+
+    import numpy as np
+    import panel as pn
+    import matplotlib.pyplot as plt
+
+    pn.extension(design=&quot;material&quot;)
+
+    def plot(factor):
+      r = np.arange(0, 2, 0.01)
+      theta = factor * np.pi * r
+      fig, ax = plt.subplots(
+        subplot_kw = {'projection': 'polar'} 
+      )
+      ax.plot(theta, r)
+      ax.set_rticks([0.5, 1.2, 1.5, 2])
+      ax.grid(True)
+      plt.close(fig)
+      return fig
+
+    slider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25,)
+    plot = pn.pane.Matplotlib(pn.rx(plot)(slider), tight=True, format=&quot;svg&quot;, height=400, sizing_mode=&quot;stretch_width&quot;)
+    pn.Column(
+      slider, plot, sizing_mode=&quot;stretch_width&quot;
+    ).servable()
+
+    asyncio.ensure_future(write_doc());</py-script>
+    <script type=&quot;application/json&quot; id=&quot;p1015&quot;>
+      {&quot;e5929bf8-d4e6-4d78-bd01-a839943cdb7c&quot;:{&quot;version&quot;:&quot;3.3.2&quot;,&quot;title&quot;:&quot;Panel Application&quot;,&quot;roots&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1002&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Column00119&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1007&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1012&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1003&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.jsdelivr.net/npm/material-components-web@7.0.0/dist/material-components-web.min.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1004&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/default.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1005&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/material_variables.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1006&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/material.css&quot;}}],&quot;min_width&quot;:300,&quot;margin&quot;:0,&quot;sizing_mode&quot;:&quot;stretch_width&quot;,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Slider&quot;,&quot;id&quot;:&quot;p1008&quot;,&quot;attributes&quot;:{&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;start&quot;:1,&quot;end&quot;:4,&quot;value&quot;:2,&quot;step&quot;:0.25}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.markup.HTML&quot;,&quot;id&quot;:&quot;p1010&quot;,&quot;attributes&quot;:{&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;height&quot;:400,&quot;margin&quot;:[5,10],&quot;sizing_mode&quot;:&quot;stretch_width&quot;,&quot;align&quot;:&quot;start&quot;,&quot;text&quot;:&quot;&amp;amp;lt;?xml version=&amp;amp;quot;1.0&amp;amp;quot; encoding=&amp;amp;quot;utf-8&amp;amp;quot; standalone=&amp;amp;quot;no&amp;amp;quot;?&amp;amp;gt;\n&amp;amp;lt;!DOCTYPE svg PUBLIC &amp;amp;quot;-//W3C//DTD SVG 1.1//EN&amp;amp;quot;\n  &amp;amp;quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&amp;amp;quot;&amp;amp;gt;\n&amp;amp;lt;svg xmlns:xlink=&amp;amp;quot;http://www.w3.org/1999/xlink&amp;amp;quot; width=&amp;amp;quot;100%&amp;amp;quot; height=&amp;amp;quot;100%&amp;amp;quot; viewBox=&amp;amp;quot;0 0 326.237 318.190125&amp;amp;quot; xmlns=&amp;amp;quot;http://www.w3.org/2000/svg&amp;amp;quot; version=&amp;amp;quot;1.1&amp;amp;quot;&amp;amp;gt;\n &amp;amp;lt;metadata&amp;amp;gt;\n  &amp;amp;lt;rdf:RDF xmlns:dc=&amp;amp;quot;http://purl.org/dc/elements/1.1/&amp;amp;quot; xmlns:cc=&amp;amp;quot;http://creativecommons.org/ns#&amp;amp;quot; xmlns:rdf=&amp;amp;quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;amp;quot;&amp;amp;gt;\n   &amp;amp;lt;cc:Work&amp;amp;gt;\n    &amp;amp;lt;dc:type rdf:resource=&amp;amp;quot;http://purl.org/dc/dcmitype/StillImage&amp;amp;quot;/&amp;amp;gt;\n    &amp;amp;lt;dc:date&amp;amp;gt;2023-12-28T05:16:58.557859&amp;amp;lt;/dc:date&amp;amp;gt;\n    &amp;amp;lt;dc:format&amp;amp;gt;image/svg+xml&amp;amp;lt;/dc:format&amp;amp;gt;\n    &amp;amp;lt;dc:creator&amp;amp;gt;\n     &amp;amp;lt;cc:Agent&amp;amp;gt;\n      &amp;amp;lt;dc:title&amp;amp;gt;Matplotlib v3.8.2, https://matplotlib.org/&amp;amp;lt;/dc:title&amp;amp;gt;\n     &amp;amp;lt;/cc:Agent&amp;amp;gt;\n    &amp;amp;lt;/dc:creator&amp;amp;gt;\n   &amp;amp;lt;/cc:Work&amp;amp;gt;\n  &amp;amp;lt;/rdf:RDF&amp;amp;gt;\n &amp;amp;lt;/metadata&amp;amp;gt;\n &amp;amp;lt;defs&amp;amp;gt;\n  &amp;amp;lt;style type=&amp;amp;quot;text/css&amp;amp;quot;&amp;amp;gt;*{stroke-linejoin: round; stroke-linecap: butt}&amp;amp;lt;/style&amp;amp;gt;\n &amp;amp;lt;/defs&amp;amp;gt;\n &amp;amp;lt;g id=&amp;amp;quot;figure_1&amp;amp;quot;&amp;amp;gt;\n  &amp;amp;lt;g id=&amp;amp;quot;patch_1&amp;amp;quot;&amp;amp;gt;\n   &amp;amp;lt;path d=&amp;amp;quot;M -0 318.190125 \nL 326.237 318.190125 \nL 326.237 0 \nL -0 0 \nz\n&amp;amp;quot; style=&amp;amp;quot;fill: #ffffff&amp;amp;quot;/&amp;amp;gt;\n  &amp;amp;lt;/g&amp;amp;gt;\n  &amp;amp;lt;g id=&amp;amp;quot;axes_1&amp;amp;quot;&amp;amp;gt;\n   &amp;amp;lt;g id=&amp;amp;quot;patch_2&amp;amp;quot;&amp;amp;gt;\n    &amp;amp;lt;path d=&amp;amp;quot;M 299.35575 159.095062 \nC 299.35575 141.622309 295.913998 124.319455 289.227465 108.176736 \nC 282.540932 92.034016 272.739653 77.365365 260.38455 65.010263 \nC 248.029447 52.65516 233.360796 42.853881 217.218077 36.167347 \nC 201.075357 29.480814 183.772504 26.039062 166.29975 26.039062 \nC 148.826996 26.039062 131.524143 29.480814 115.381423 36.167347 \nC 99.238704 42.853881 84.570053 52.65516 72.21495 65.010263 \nC 59.859847 77.365365 50.058568 92.034016 43.372035 108.176736 \nC 36.685502 124.319455 33.24375 141.622309 33.24375 159.095062 \nC 33.24375 176.567816 36.685502 193.87067 43.372035 210.013389 \nC 50.058568 226.156109 59.859847 240.82476 72.21495 253.179862 \nC 84.570053 265.534965 99.238704 275.336244 115.381423 282.022778 \nC 131.524143 288.709311 148.826996 292.151062 166.29975 292.151062 \nC 183.772504 292.151062 201.075357 288.709311 217.218077 282.022778 \nC 233.360796 275.336244 248.029447 265.534965 260.38455 253.179862 \nC 272.739653 240.82476 282.540932 226.156109 289.227465 210.013389 \nC 295.913998 193.87067 299.35575 176.567816 299.35575 159.095062 \nM 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nz\n&amp;amp;quot; style=&amp;amp;quot;fill: #ffffff&amp;amp;quot;/&amp;amp;gt;\n   &amp;amp;lt;/g&amp;amp;gt;\n   &amp;amp;lt;g id=&amp;amp;quot;matplotlib.axis_1&amp;amp;quot;&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_1&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_1&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 299.35575 159.095062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_1&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 0\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(307.6745 161.854437) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-30&amp;amp;quot; d=&amp;amp;quot;M 2034 4250 \nQ 1547 4250 1301 3770 \nQ 1056 3291 1056 2328 \nQ 1056 1369 1301 889 \nQ 1547 409 2034 409 \nQ 2525 409 2770 889 \nQ 3016 1369 3016 2328 \nQ 3016 3291 2770 3770 \nQ 2525 4250 2034 4250 \nz\nM 2034 4750 \nQ 2819 4750 3233 4129 \nQ 3647 3509 3647 2328 \nQ 3647 1150 3233 529 \nQ 2819 -91 2034 -91 \nQ 1250 -91 836 529 \nQ 422 1150 422 2328 \nQ 422 3509 836 4129 \nQ 1250 4750 2034 4750 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-b0&amp;amp;quot; d=&amp;amp;quot;M 1600 4347 \nQ 1350 4347 1178 4173 \nQ 1006 4000 1006 3750 \nQ 1006 3503 1178 3333 \nQ 1350 3163 1600 3163 \nQ 1850 3163 2022 3333 \nQ 2194 3503 2194 3750 \nQ 2194 3997 2020 4172 \nQ 1847 4347 1600 4347 \nz\nM 1600 4750 \nQ 1800 4750 1984 4673 \nQ 2169 4597 2303 4453 \nQ 2447 4313 2519 4134 \nQ 2591 3956 2591 3750 \nQ 2591 3338 2302 3052 \nQ 2013 2766 1594 2766 \nQ 1172 2766 890 3047 \nQ 609 3328 609 3750 \nQ 609 4169 896 4459 \nQ 1184 4750 1600 4750 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-30&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_2&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_2&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 260.38455 65.010263 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_2&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 45\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(261.421545 57.870143) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-34&amp;amp;quot; d=&amp;amp;quot;M 2419 4116 \nL 825 1625 \nL 2419 1625 \nL 2419 4116 \nz\nM 2253 4666 \nL 3047 4666 \nL 3047 1625 \nL 3713 1625 \nL 3713 1100 \nL 3047 1100 \nL 3047 0 \nL 2419 0 \nL 2419 1100 \nL 313 1100 \nL 313 1709 \nL 2253 4666 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-35&amp;amp;quot; d=&amp;amp;quot;M 691 4666 \nL 3169 4666 \nL 3169 4134 \nL 1269 4134 \nL 1269 2991 \nQ 1406 3038 1543 3061 \nQ 1681 3084 1819 3084 \nQ 2600 3084 3056 2656 \nQ 3513 2228 3513 1497 \nQ 3513 744 3044 326 \nQ 2575 -91 1722 -91 \nQ 1428 -91 1123 -41 \nQ 819 9 494 109 \nL 494 744 \nQ 775 591 1075 516 \nQ 1375 441 1709 441 \nQ 2250 441 2565 725 \nQ 2881 1009 2881 1497 \nQ 2881 1984 2565 2268 \nQ 2250 2553 1709 2553 \nQ 1456 2553 1204 2497 \nQ 953 2441 691 2322 \nL 691 4666 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-34&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-35&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;127.246094&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_3&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_3&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 166.29975 26.039062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_3&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 90\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(157.43725 14.798437) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-39&amp;amp;quot; d=&amp;amp;quot;M 703 97 \nL 703 672 \nQ 941 559 1184 500 \nQ 1428 441 1663 441 \nQ 2288 441 2617 861 \nQ 2947 1281 2994 2138 \nQ 2813 1869 2534 1725 \nQ 2256 1581 1919 1581 \nQ 1219 1581 811 2004 \nQ 403 2428 403 3163 \nQ 403 3881 828 4315 \nQ 1253 4750 1959 4750 \nQ 2769 4750 3195 4129 \nQ 3622 3509 3622 2328 \nQ 3622 1225 3098 567 \nQ 2575 -91 1691 -91 \nQ 1453 -91 1209 -44 \nQ 966 3 703 97 \nz\nM 1959 2075 \nQ 2384 2075 2632 2365 \nQ 2881 2656 2881 3163 \nQ 2881 3666 2632 3958 \nQ 2384 4250 1959 4250 \nQ 1534 4250 1286 3958 \nQ 1038 3666 1038 3163 \nQ 1038 2656 1286 2365 \nQ 1534 2075 1959 2075 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-39&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-30&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;127.246094&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_4&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_4&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 72.21495 65.010263 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_4&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 135\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(50.271705 57.870143) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-31&amp;amp;quot; d=&amp;amp;quot;M 794 531 \nL 1825 531 \nL 1825 4091 \nL 703 3866 \nL 703 4441 \nL 1819 4666 \nL 2450 4666 \nL 2450 531 \nL 3481 531 \nL 3481 0 \nL 794 0 \nL 794 531 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-33&amp;amp;quot; d=&amp;amp;quot;M 2597 2516 \nQ 3050 2419 3304 2112 \nQ 3559 1806 3559 1356 \nQ 3559 666 3084 287 \nQ 2609 -91 1734 -91 \nQ 1441 -91 1130 -33 \nQ 819 25 488 141 \nL 488 750 \nQ 750 597 1062 519 \nQ 1375 441 1716 441 \nQ 2309 441 2620 675 \nQ 2931 909 2931 1356 \nQ 2931 1769 2642 2001 \nQ 2353 2234 1838 2234 \nL 1294 2234 \nL 1294 2753 \nL 1863 2753 \nQ 2328 2753 2575 2939 \nQ 2822 3125 2822 3475 \nQ 2822 3834 2567 4026 \nQ 2313 4219 1838 4219 \nQ 1578 4219 1281 4162 \nQ 984 4106 628 3988 \nL 628 4550 \nQ 988 4650 1302 4700 \nQ 1616 4750 1894 4750 \nQ 2613 4750 3031 4423 \nQ 3450 4097 3450 3541 \nQ 3450 3153 3228 2886 \nQ 3006 2619 2597 2516 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-31&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-33&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-35&amp;amp;quot; x=&amp;amp;quot;127.246094&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;190.869141&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_5&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_5&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 33.24375 159.095062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_5&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 180\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(7.2 161.854437) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-38&amp;amp;quot; d=&amp;amp;quot;M 2034 2216 \nQ 1584 2216 1326 1975 \nQ 1069 1734 1069 1313 \nQ 1069 891 1326 650 \nQ 1584 409 2034 409 \nQ 2484 409 2743 651 \nQ 3003 894 3003 1313 \nQ 3003 1734 2745 1975 \nQ 2488 2216 2034 2216 \nz\nM 1403 2484 \nQ 997 2584 770 2862 \nQ 544 3141 544 3541 \nQ 544 4100 942 4425 \nQ 1341 4750 2034 4750 \nQ 2731 4750 3128 4425 \nQ 3525 4100 3525 3541 \nQ 3525 3141 3298 2862 \nQ 3072 2584 2669 2484 \nQ 3125 2378 3379 2068 \nQ 3634 1759 3634 1313 \nQ 3634 634 3220 271 \nQ 2806 -91 2034 -91 \nQ 1263 -91 848 271 \nQ 434 634 434 1313 \nQ 434 1759 690 2068 \nQ 947 2378 1403 2484 \nz\nM 1172 3481 \nQ 1172 3119 1398 2916 \nQ 1625 2713 2034 2713 \nQ 2441 2713 2670 2916 \nQ 2900 3119 2900 3481 \nQ 2900 3844 2670 4047 \nQ 2441 4250 2034 4250 \nQ 1625 4250 1398 4047 \nQ 1172 3844 1172 3481 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-31&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-38&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-30&amp;amp;quot; x=&amp;amp;quot;127.246094&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;190.869141&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_6&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_6&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 72.21495 253.179862 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_6&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 225\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(50.271705 265.838732) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-32&amp;amp;quot; d=&amp;amp;quot;M 1228 531 \nL 3431 531 \nL 3431 0 \nL 469 0 \nL 469 531 \nQ 828 903 1448 1529 \nQ 2069 2156 2228 2338 \nQ 2531 2678 2651 2914 \nQ 2772 3150 2772 3378 \nQ 2772 3750 2511 3984 \nQ 2250 4219 1831 4219 \nQ 1534 4219 1204 4116 \nQ 875 4013 500 3803 \nL 500 4441 \nQ 881 4594 1212 4672 \nQ 1544 4750 1819 4750 \nQ 2544 4750 2975 4387 \nQ 3406 4025 3406 3419 \nQ 3406 3131 3298 2873 \nQ 3191 2616 2906 2266 \nQ 2828 2175 2409 1742 \nQ 1991 1309 1228 531 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-32&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-32&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-35&amp;amp;quot; x=&amp;amp;quot;127.246094&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;190.869141&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_7&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_7&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 166.29975 292.151062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_7&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 270\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(154.256 308.910437) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-37&amp;amp;quot; d=&amp;amp;quot;M 525 4666 \nL 3525 4666 \nL 3525 4397 \nL 1831 0 \nL 1172 0 \nL 2766 4134 \nL 525 4134 \nL 525 4666 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-32&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-37&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-30&amp;amp;quot; x=&amp;amp;quot;127.246094&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;190.869141&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;xtick_8&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_8&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 260.38455 253.179862 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_8&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 315\u00b0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(258.240295 265.838732) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-33&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-31&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-35&amp;amp;quot; x=&amp;amp;quot;127.246094&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-b0&amp;amp;quot; x=&amp;amp;quot;190.869141&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n   &amp;amp;lt;/g&amp;amp;gt;\n   &amp;amp;lt;g id=&amp;amp;quot;matplotlib.axis_2&amp;amp;quot;&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;ytick_1&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_9&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 198.138946 159.095062 \nC 198.138946 154.913978 197.315363 150.773548 195.715331 146.91073 \nC 194.1153 143.047911 191.769935 139.537825 188.813461 136.581351 \nC 185.856988 133.624878 182.346902 131.279513 178.484083 129.679481 \nC 174.621264 128.079449 170.480835 127.255867 166.29975 127.255867 \nC 162.118665 127.255867 157.978236 128.079449 154.115417 129.679481 \nC 150.252598 131.279513 146.742512 133.624878 143.786039 136.581351 \nC 140.829565 139.537825 138.4842 143.047911 136.884169 146.91073 \nC 135.284137 150.773548 134.460554 154.913978 134.460554 159.095062 \nC 134.460554 163.276147 135.284137 167.416577 136.884169 171.279395 \nC 138.4842 175.142214 140.829565 178.6523 143.786039 181.608774 \nC 146.742512 184.565247 150.252598 186.910612 154.115417 188.510644 \nC 157.978236 190.110676 162.118665 190.934258 166.29975 190.934258 \nC 170.480835 190.934258 174.621264 190.110676 178.484083 188.510644 \nC 182.346902 186.910612 185.856988 184.565247 188.813461 181.608774 \nC 191.769935 178.6523 194.1153 175.142214 195.715331 171.279395 \nC 197.315363 167.416577 198.138946 163.276147 198.138946 159.095062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_9&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 0.5 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(195.715331 144.831042) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;defs&amp;amp;gt;\n        &amp;amp;lt;path id=&amp;amp;quot;DejaVuSans-2e&amp;amp;quot; d=&amp;amp;quot;M 684 794 \nL 1344 794 \nL 1344 0 \nL 684 0 \nL 684 794 \nz\n&amp;amp;quot; transform=&amp;amp;quot;scale(0.015625)&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;/defs&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-30&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-2e&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-35&amp;amp;quot; x=&amp;amp;quot;95.410156&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;ytick_2&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_10&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 242.71382 159.095062 \nC 242.71382 149.060459 240.737222 139.123429 236.897146 129.852664 \nC 233.057069 120.581899 227.428194 112.157692 220.332657 105.062155 \nC 213.237121 97.966619 204.812914 92.337744 195.542149 88.497667 \nC 186.271384 84.65759 176.334354 82.680992 166.29975 82.680992 \nC 156.265146 82.680992 146.328116 84.65759 137.057351 88.497667 \nC 127.786586 92.337744 119.362379 97.966619 112.266843 105.062155 \nC 105.171306 112.157692 99.542431 120.581899 95.702354 129.852664 \nC 91.862278 139.123429 89.88568 149.060459 89.88568 159.095062 \nC 89.88568 169.129666 91.862278 179.066696 95.702354 188.337461 \nC 99.542431 197.608226 105.171306 206.032433 112.266843 213.12797 \nC 119.362379 220.223506 127.786586 225.852381 137.057351 229.692458 \nC 146.328116 233.532535 156.265146 235.509133 166.29975 235.509133 \nC 176.334354 235.509133 186.271384 233.532535 195.542149 229.692458 \nC 204.812914 225.852381 213.237121 220.223506 220.332657 213.12797 \nC 227.428194 206.032433 233.057069 197.608226 236.897146 188.337461 \nC 240.737222 179.066696 242.71382 169.129666 242.71382 159.095062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_10&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 1.2 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(236.897146 127.772976) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-31&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-2e&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-32&amp;amp;quot; x=&amp;amp;quot;95.410156&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;ytick_3&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_11&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 261.817338 159.095062 \nC 261.817338 146.551808 259.34659 134.13052 254.546494 122.542064 \nC 249.746399 110.953608 242.710305 100.423349 233.840884 91.553928 \nC 224.971464 82.684508 214.441205 75.648414 202.852748 70.848318 \nC 191.264292 66.048222 178.843005 63.577475 166.29975 63.577475 \nC 153.756495 63.577475 141.335208 66.048222 129.746752 70.848318 \nC 118.158295 75.648414 107.628036 82.684508 98.758616 91.553928 \nC 89.889195 100.423349 82.853101 110.953608 78.053006 122.542064 \nC 73.25291 134.13052 70.782162 146.551808 70.782162 159.095062 \nC 70.782162 171.638317 73.25291 184.059605 78.053006 195.648061 \nC 82.853101 207.236517 89.889195 217.766776 98.758616 226.636197 \nC 107.628036 235.505617 118.158295 242.541711 129.746752 247.341807 \nC 141.335208 252.141903 153.756495 254.61265 166.29975 254.61265 \nC 178.843005 254.61265 191.264292 252.141903 202.852748 247.341807 \nC 214.441205 242.541711 224.971464 235.505617 233.840884 226.636197 \nC 242.710305 217.766776 249.746399 207.236517 254.546494 195.648061 \nC 259.34659 184.059605 261.817338 171.638317 261.817338 159.095062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_11&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 1.5 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(254.546494 120.462377) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-31&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-2e&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-35&amp;amp;quot; x=&amp;amp;quot;95.410156&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;g id=&amp;amp;quot;ytick_4&amp;amp;quot;&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;line2d_12&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;path d=&amp;amp;quot;M 293.656534 159.095062 \nC 293.656534 142.370723 290.362204 125.809006 283.962076 110.357731 \nC 277.561948 94.906456 268.18049 80.866111 256.354596 69.040217 \nC 244.528702 57.214323 230.488356 47.832864 215.037081 41.432737 \nC 199.585806 35.032609 183.02409 31.738279 166.29975 31.738279 \nC 149.57541 31.738279 133.013694 35.032609 117.562419 41.432737 \nC 102.111144 47.832864 88.070798 57.214323 76.244904 69.040217 \nC 64.41901 80.866111 55.037552 94.906456 48.637424 110.357731 \nC 42.237296 125.809006 38.942966 142.370723 38.942966 159.095062 \nC 38.942966 175.819402 42.237296 192.381119 48.637424 207.832394 \nC 55.037552 223.283669 64.41901 237.324014 76.244904 249.149908 \nC 88.070798 260.975802 102.111144 270.357261 117.562419 276.757388 \nC 133.013694 283.157516 149.57541 286.451846 166.29975 286.451846 \nC 183.02409 286.451846 199.585806 283.157516 215.037081 276.757388 \nC 230.488356 270.357261 244.528702 260.975802 256.354596 249.149908 \nC 268.18049 237.324014 277.561948 223.283669 283.962076 207.832394 \nC 290.362204 192.381119 293.656534 175.819402 293.656534 159.095062 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;g id=&amp;amp;quot;text_12&amp;amp;quot;&amp;amp;gt;\n      &amp;amp;lt;!-- 2.0 --&amp;amp;gt;\n      &amp;amp;lt;g transform=&amp;amp;quot;translate(283.962076 108.278044) scale(0.1 -0.1)&amp;amp;quot;&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-32&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-2e&amp;amp;quot; x=&amp;amp;quot;63.623047&amp;amp;quot;/&amp;amp;gt;\n       &amp;amp;lt;use xlink:href=&amp;amp;quot;#DejaVuSans-30&amp;amp;quot; x=&amp;amp;quot;95.410156&amp;amp;quot;/&amp;amp;gt;\n      &amp;amp;lt;/g&amp;amp;gt;\n     &amp;amp;lt;/g&amp;amp;gt;\n    &amp;amp;lt;/g&amp;amp;gt;\n   &amp;amp;lt;/g&amp;amp;gt;\n   &amp;amp;lt;g id=&amp;amp;quot;line2d_13&amp;amp;quot;&amp;amp;gt;\n    &amp;amp;lt;path d=&amp;amp;quot;M 166.29975 159.095062 \nL 167.563275 158.935442 \nL 168.766863 158.461616 \nL 169.85215 157.688568 \nL 170.763894 156.640879 \nL 171.45144 155.352141 \nL 171.870096 153.864159 \nL 171.982369 152.225956 \nL 171.759044 150.492591 \nL 171.180079 148.723835 \nL 170.235291 146.982713 \nL 168.924821 145.333959 \nL 167.259366 143.842406 \nL 165.260166 142.571351 \nL 162.958751 141.58093 \nL 160.396438 140.926538 \nL 157.623609 140.657324 \nL 154.69875 140.814811 \nL 153.199523 141.064147 \nL 151.687302 141.431647 \nL 150.171132 141.919829 \nL 148.660321 142.530536 \nL 147.164383 143.26491 \nL 145.692989 144.123375 \nL 144.255918 145.105621 \nL 142.862994 146.210597 \nL 141.524039 147.436498 \nL 140.248815 148.780767 \nL 139.046963 150.240095 \nL 137.927954 151.810423 \nL 136.901028 153.486956 \nL 135.975141 155.264173 \nL 135.158909 157.135847 \nL 134.460554 159.095062 \nL 133.887854 161.134246 \nL 133.44809 163.245192 \nL 133.148 165.419097 \nL 132.993728 167.646595 \nL 132.990788 169.9178 \nL 133.144014 172.222347 \nL 133.457529 174.549439 \nL 133.934706 176.887896 \nL 134.578138 179.22621 \nL 135.389609 181.552594 \nL 136.370073 183.855045 \nL 137.519629 186.121395 \nL 138.837509 188.339379 \nL 140.322064 190.496691 \nL 141.970757 192.581048 \nL 143.780161 194.580256 \nL 145.745959 196.482269 \nL 147.86295 198.275256 \nL 150.12506 199.947666 \nL 152.525356 201.488287 \nL 155.056068 202.886313 \nL 157.708609 204.131403 \nL 160.473606 205.213739 \nL 163.340935 206.124088 \nL 166.29975 206.853856 \nL 169.338533 207.395143 \nL 172.445134 207.740789 \nL 175.60682 207.884431 \nL 178.810326 207.820539 \nL 182.041914 207.544462 \nL 185.287429 207.052466 \nL 188.532361 206.341766 \nL 191.761908 205.410557 \nL 194.961044 204.258036 \nL 198.114587 202.884429 \nL 201.207266 201.291001 \nL 204.223797 199.480071 \nL 207.148954 197.455018 \nL 209.967639 195.220282 \nL 212.664961 192.78136 \nL 215.226305 190.144798 \nL 217.637406 187.318178 \nL 219.884426 184.310097 \nL 221.954021 181.130147 \nL 223.833412 177.788883 \nL 225.510455 174.297788 \nL 226.973708 170.669239 \nL 228.212493 166.916461 \nL 229.21696 163.053478 \nL 229.978142 159.095062 \nL 230.488015 155.056679 \nL 230.739544 150.954423 \nL 230.726737 146.804957 \nL 230.444681 142.625444 \nL 229.889587 138.433472 \nL 229.058822 134.246988 \nL 227.950937 130.084216 \nL 226.565694 125.963579 \nL 224.904085 121.903621 \nL 222.968341 117.922921 \nL 220.761949 114.040013 \nL 218.289646 110.273301 \nL 215.557421 106.640971 \nL 212.572504 103.160912 \nL 209.343353 99.850626 \nL 205.879633 96.727147 \nL 202.19219 93.806956 \nL 198.29302 91.105903 \nL 194.19523 88.639123 \nL 189.912996 86.420963 \nL 185.461518 84.464903 \nL 180.856962 82.783486 \nL 176.116403 81.388252 \nL 171.257765 80.289668 \nL 166.29975 79.497073 \nL 161.261767 79.018614 \nL 156.163856 78.861201 \nL 151.02661 79.030458 \nL 145.871088 79.530677 \nL 140.718733 80.364788 \nL 135.591281 81.534323 \nL 130.510668 83.039393 \nL 125.498942 84.878668 \nL 120.578161 87.049367 \nL 115.770303 89.547246 \nL 111.097167 92.366602 \nL 106.580273 95.500279 \nL 102.240771 98.939677 \nL 98.099338 102.674775 \nL 94.176088 106.694155 \nL 90.490473 110.985032 \nL 87.061194 115.533298 \nL 83.906108 120.323557 \nL 81.042143 125.339188 \nL 78.485213 130.56239 \nL 76.250135 135.974251 \nL 74.350555 141.554816 \nL 72.798872 147.283155 \nL 71.606172 153.137448 \nL 70.782162 159.095062 \nL 70.335117 165.132645 \nL 70.271821 171.226211 \nL 70.597527 177.351238 \nL 71.31591 183.482768 \nL 72.429038 189.595506 \nL 73.937342 195.663927 \nL 75.839597 201.662379 \nL 78.132906 207.565195 \nL 80.812693 213.346798 \nL 83.872708 218.981814 \nL 87.305029 224.445179 \nL 91.100079 229.712254 \nL 95.24665 234.758929 \nL 99.731929 239.561735 \nL 104.541538 244.09795 \nL 109.659573 248.345701 \nL 115.06866 252.284069 \nL 120.75001 255.893188 \nL 126.683481 259.154337 \nL 132.847651 262.050037 \nL 139.219896 264.564132 \nL 145.776468 266.681875 \nL 152.492588 268.390008 \nL 159.342535 269.676825 \nL 166.29975 270.532248 \nL 173.336933 270.94788 \nL 180.426153 270.917058 \nL 187.538961 270.434904 \nL 194.646498 269.498357 \nL 201.71962 268.106212 \nL 208.729009 266.259138 \nL 215.645302 263.959698 \nL 222.439208 261.212357 \nL 229.081633 258.023481 \nL 235.543806 254.40133 \nL 241.7974 250.356045 \nL 247.814656 245.899621 \nL 253.568504 241.045877 \nL 259.032684 235.810417 \nL 264.181862 230.21058 \nL 268.991749 224.265387 \nL 273.439206 217.995477 \nL 277.502358 211.423038 \nL 281.160693 204.571727 \nL 284.395162 197.466588 \nL 287.188274 190.13396 \nL 289.524181 182.60138 \nL 291.388762 174.89748 \nL 292.769697 167.051877 \nL 292.769697 167.051877 \n&amp;amp;quot; clip-path=&amp;amp;quot;url(#p700fe7a69d)&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #1f77b4; stroke-width: 1.5; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n   &amp;amp;lt;/g&amp;amp;gt;\n   &amp;amp;lt;g id=&amp;amp;quot;patch_3&amp;amp;quot;&amp;amp;gt;\n    &amp;amp;lt;path d=&amp;amp;quot;M 299.35575 159.095062 \nC 299.35575 141.622309 295.913998 124.319455 289.227465 108.176736 \nC 282.540932 92.034016 272.739653 77.365365 260.38455 65.010263 \nC 248.029447 52.65516 233.360796 42.853881 217.218077 36.167347 \nC 201.075357 29.480814 183.772504 26.039062 166.29975 26.039062 \nC 148.826996 26.039062 131.524143 29.480814 115.381423 36.167347 \nC 99.238704 42.853881 84.570053 52.65516 72.21495 65.010263 \nC 59.859847 77.365365 50.058568 92.034016 43.372035 108.176736 \nC 36.685502 124.319455 33.24375 141.622309 33.24375 159.095062 \nC 33.24375 176.567816 36.685502 193.87067 43.372035 210.013389 \nC 50.058568 226.156109 59.859847 240.82476 72.21495 253.179862 \nC 84.570053 265.534965 99.238704 275.336244 115.381423 282.022778 \nC 131.524143 288.709311 148.826996 292.151062 166.29975 292.151062 \nC 183.772504 292.151062 201.075357 288.709311 217.218077 282.022778 \nC 233.360796 275.336244 248.029447 265.534965 260.38455 253.179862 \nC 272.739653 240.82476 282.540932 226.156109 289.227465 210.013389 \nC 295.913998 193.87067 299.35575 176.567816 299.35575 159.095062 \n&amp;amp;quot; style=&amp;amp;quot;fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square&amp;amp;quot;/&amp;amp;gt;\n   &amp;amp;lt;/g&amp;amp;gt;\n  &amp;amp;lt;/g&amp;amp;gt;\n &amp;amp;lt;/g&amp;amp;gt;\n &amp;amp;lt;defs&amp;amp;gt;\n  &amp;amp;lt;clipPath id=&amp;amp;quot;p700fe7a69d&amp;amp;quot;&amp;amp;gt;\n   &amp;amp;lt;path d=&amp;amp;quot;M 299.35575 159.095062 \nC 299.35575 141.622309 295.913998 124.319455 289.227465 108.176736 \nC 282.540932 92.034016 272.739653 77.365365 260.38455 65.010263 \nC 248.029447 52.65516 233.360796 42.853881 217.218077 36.167347 \nC 201.075357 29.480814 183.772504 26.039062 166.29975 26.039062 \nC 148.826996 26.039062 131.524143 29.480814 115.381423 36.167347 \nC 99.238704 42.853881 84.570053 52.65516 72.21495 65.010263 \nC 59.859847 77.365365 50.058568 92.034016 43.372035 108.176736 \nC 36.685502 124.319455 33.24375 141.622309 33.24375 159.095062 \nC 33.24375 176.567816 36.685502 193.87067 43.372035 210.013389 \nC 50.058568 226.156109 59.859847 240.82476 72.21495 253.179862 \nC 84.570053 265.534965 99.238704 275.336244 115.381423 282.022778 \nC 131.524143 288.709311 148.826996 292.151062 166.29975 292.151062 \nC 183.772504 292.151062 201.075357 288.709311 217.218077 282.022778 \nC 233.360796 275.336244 248.029447 265.534965 260.38455 253.179862 \nC 272.739653 240.82476 282.540932 226.156109 289.227465 210.013389 \nC 295.913998 193.87067 299.35575 176.567816 299.35575 159.095062 \nM 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nC 166.29975 159.095062 166.29975 159.095062 166.29975 159.095062 \nz\n&amp;amp;quot;/&amp;amp;gt;\n  &amp;amp;lt;/clipPath&amp;amp;gt;\n &amp;amp;lt;/defs&amp;amp;gt;\n&amp;amp;lt;/svg&amp;amp;gt;\n&quot;}}]}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.location.Location&quot;,&quot;id&quot;:&quot;p1013&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;location&quot;,&quot;reload&quot;:false}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.browser.BrowserInfo&quot;,&quot;id&quot;:&quot;p1014&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;browser_info&quot;}}],&quot;defs&quot;:[{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;ReactiveHTML1&quot;},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FlexBox1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;align_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;align_items&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;flex_direction&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;row&quot;},{&quot;name&quot;:&quot;flex_wrap&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;wrap&quot;},{&quot;name&quot;:&quot;justify_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FloatPanel1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;config&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;contained&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;right-top&quot;},{&quot;name&quot;:&quot;offsetx&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;offsety&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;theme&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;primary&quot;},{&quot;name&quot;:&quot;status&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;normalized&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;GridStack1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;mode&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;warn&quot;},{&quot;name&quot;:&quot;ncols&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;nrows&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;allow_resize&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;allow_drag&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;state&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;drag1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;slider_width&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:5},{&quot;name&quot;:&quot;slider_color&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;black&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:50}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;click1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;terminal_output&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;debug_name&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;clears&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;copy_to_clipboard1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;fill&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;none&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FastWrapper1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;object&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;style&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationAreaBase1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationArea1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;notifications&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;types&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;warning&quot;],[&quot;background&quot;,&quot;#ffc107&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-exclamation-triangle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]},{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;info&quot;],[&quot;background&quot;,&quot;#007bff&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-info-circle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]}]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;Notification&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;background&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;duration&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:3000},{&quot;name&quot;:&quot;icon&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;message&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;notification_type&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;_destroyed&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:false}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;TemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;BootstrapTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;MaterialTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]}]}}
+    </script>
+    <script type=&quot;text/javascript&quot;>
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('p1015').textContent;
+              const render_items = [{&quot;docid&quot;:&quot;e5929bf8-d4e6-4d78-bd01-a839943cdb7c&quot;,&quot;roots&quot;:{&quot;p1002&quot;:&quot;b62c6cc0-24fb-4b7b-8a97-0f2820e0555c&quot;,&quot;p1013&quot;:&quot;e0fe76fa-8bcc-4eb3-bd5e-807d7214ea39&quot;,&quot;p1014&quot;:&quot;a5f0553c-9753-421b-8c04-da3a9b458ba3&quot;},&quot;root_ids&quot;:[&quot;p1002&quot;,&quot;p1013&quot;,&quot;p1014&quot;]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log(&quot;Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing&quot;);
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != &quot;loading&quot;) fn();
+        else document.addEventListener(&quot;DOMContentLoaded&quot;, fn);
+      })();
+    </script>
+  </body>
+</html>" class="panel-app" onload="resizePanelApp(this)" allow="accelerometer;autoplay;camera;document-domain;encrypted-media;fullscreen;gamepad;geolocation;gyroscope;layout-animations;legacy-image-formats;microphone;oversized-images;payment;publickey-credentials-get;speaker-selection;sync-xhr;unoptimized-images;unsized-media;screen-wake-lock;web-share;xr-spatial-tracking"></iframe>
+
+</section>
+<section id="panel-fastlisttemplate" class="level3">
+<h3 class="anchored" data-anchor-id="panel-fastlisttemplate">Panel FastListTemplate</h3>
+<p>A <strong>Panel FastListTemplate</strong> application embedded in a Quarto doc</p>
+
+<iframe frameborder="0" srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot; >
+  <head>
+    <meta charset=&quot;utf-8&quot;>
+    <title>Panel in Quarto</title>
+    <link rel=&quot;apple-touch-icon&quot; sizes=&quot;180x180&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/images/apple-touch-icon.png&quot;>
+<link rel=&quot;icon&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/images/favicon.ico&quot; type=&quot;&quot;><meta name=&quot;name&quot; content=&quot;Panel in Quarto&quot;>    <style>
+      html, body {
+	display: flow-root;
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+<link rel=&quot;stylesheet&quot; href=&quot;https://pyscript.net/releases/2023.05.1/pyscript.css&quot; />
+<link rel=&quot;stylsheet&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/pyscript.css&quot; />
+<style type=&quot;text/css&quot;>
+:host(.pn-loading),
+.pn-loading {
+  overflow: hidden;
+}
+
+:host(.pn-loading):before,
+.pn-loading:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: '';
+  z-index: 1000;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50%;
+  border-width: 1px;
+  cursor: progress;
+}
+
+:host(.pn-loading) .pn-loading-msg,
+.pn-loading .pn-loading-msg {
+  position: absolute;
+  top: 72%;
+  font-size: 2em;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+
+:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {
+  background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=&quot;);
+  background-size: auto calc(min(50%, 400px));
+}
+</style><script defer src=&quot;https://pyscript.net/releases/2023.05.1/pyscript.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/panel.min.js&quot;></script>
+
+<script type=&quot;text/javascript&quot;>
+  Bokeh.set_log_level(&quot;info&quot;);
+</script><!-- Template CSS -->
+<link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Open+Sans&quot;>
+<link rel=&quot;stylesheet&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/default.css&quot;>
+<link rel=&quot;stylesheet&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/fastbasetemplate/fast.css&quot;>
+<link rel=&quot;stylesheet&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/fastlisttemplate/fast_list_template.css&quot;>
+<style type=&quot;text/css&quot;>
+
+:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {
+  background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=&quot;);
+  background-size: auto calc(min(50%, 400px));
+}
+</style>
+<link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;//fonts.googleapis.com/css?family=Open+Sans&quot; />
+
+<style>
+  :root {
+    --background-color: #ffffff;
+    --body-font: Open Sans, sans-serif;
+    --corner-radius: 3;
+    --header-background: #0072B5;
+    --header-color: #ffffff;
+    --sidebar-width: 330px;
+  }
+  body {
+    color: #2B2B2B;
+    background-color: var(--background-color);
+    font-family: var(--body-font);
+  }
+  #header a {
+    color: currentColor;
+  }
+  #header-design-provider {
+    --neutral-fill-hover: var(--header-background);
+    --neutral-fill-rest: var(--header-background);
+    --neutral-foreground-rest: var(--header-color);
+    background: var(--header-background);
+    color: var(--header-color);
+  }
+  #sidebar {
+    min-width: var(--sidebar-width);
+    max-width: var(--sidebar-width);
+  }
+</style>
+
+<!-- Template JS -->
+<script src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/fastbasetemplate/fast_template.js&quot;></script>
+<script src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/@microsoft/fast-components@2.30.6/dist/fast-components.js&quot; type=&quot;module&quot;></script>
+<script src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/fast/js/fast_design.js&quot; type=&quot;module&quot;></script>
+
+<!-- Fast Script -->
+<script type=&quot;text/javascript&quot;>
+document.addEventListener('DOMContentLoaded', (event) => {
+  const header_design = new window.fastDesignProvider(&quot;#header-design-provider&quot;);
+  const body_design = window.bodyDesign = new window.fastDesignProvider(&quot;#body-design-provider&quot;);
+  body_design.setLuminance(1.0);
+  body_design.setAccentColor(&quot;#0072B5&quot;)
+  body_design.setNeutralColor(&quot;#000000&quot;);
+  header_design.setLuminance(1.0);
+  header_design.setAccentColor(&quot;#ffffff&quot;);
+  header_design.setNeutralColor(&quot;#ffffff&quot;);
+});
+</script>
+  </head>
+  <body class=&quot;pn-loading pn-arc&quot;>
+<fast-design-system-provider id=&quot;body-design-provider&quot; use-defaults>
+  <div id=&quot;container&quot;>
+    <fast-design-system-provider id=&quot;header-design-provider&quot;>
+      <nav id=&quot;header&quot; class=&quot;shadow&quot; >
+	<div class=&quot;app-header&quot;>
+	  <a class=&quot;title&quot; href=&quot;&quot; >Panel in Quarto</a>
+	</div>
+	<div id=&quot;header-items&quot;>
+	</div>
+	<div class=&quot;pn-toggle-theme&quot;>
+	  <fast-switch id=&quot;theme-switch&quot; style=&quot;float: right;&quot; onChange=&quot;toggleLightDarkTheme('default')&quot; checked>
+	    <span slot=&quot;checked-message&quot;>
+              <svg class=&quot;theme-toggle-icon&quot; fill=&quot;currentColor&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 25 25&quot;><path d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;/><path d=&quot;M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z&quot;/></svg>
+	    </span>
+	    <span slot=&quot;unchecked-message&quot;>
+              <svg class=&quot;theme-toggle-icon&quot; fill=&quot;currentColor&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 25 25&quot;><path d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;/><path d=&quot;M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z&quot;/></svg>
+	    </span>
+	  </fast-switch>
+	  <fast-tooltip anchor=&quot;theme-switch&quot; position=&quot;bottom&quot;>
+	    Toggle the Theme
+	  </fast-tooltip>
+	</div>
+	<div class=&quot;pn-busy-container&quot; id=&quot;busy-container&quot;>
+	  <div id=&quot;b76674a5-cf60-407a-a391-96ba6c1cba21&quot; data-root-id=&quot;p1016&quot; style=&quot;display: contents;&quot;></div>
+	</div>
+	<fast-tooltip anchor=&quot;busy-container&quot; position=&quot;left&quot;>
+	  Busy Indicator
+	</fast-tooltip>
+      </nav>
+    </fast-design-system-provider>
+
+    <div class=&quot;row&quot; id=&quot;content&quot;>
+
+      <div class=&quot;main&quot; id=&quot;main&quot;>
+        <div class=&quot;card-margin None&quot;>
+	  <fast-card class=&quot;pn-wrapper&quot;>
+	    <span class=&quot;fullscreen-button&quot; onclick=&quot;toggleFullScreen(this)&quot;>
+	      <svg xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;currentColor&quot; viewBox=&quot;0 0 18 18&quot;>
+		<path d=&quot;M4.5 11H3v4h4v-1.5H4.5V11zM3 7h1.5V4.5H7V3H3v4zm10.5 6.5H11V15h4v-4h-1.5v2.5zM11 3v1.5h2.5V7H15V3h-4z&quot;/>
+	      </svg>
+	    </span>
+	    <div id=&quot;d72a3bdc-0f10-4b27-9d25-a3f57925c784&quot; data-root-id=&quot;p1017&quot; style=&quot;display: contents;&quot;></div>
+	  </fast-card>
+	</div>
+      </div>
+      <fast-dialog id=&quot;pn-Modal&quot; hidden>
+        <fast-button class=&quot;pn-modal-close&quot; id=&quot;pn-closeModal&quot;>&amp;times;</fast-button>
+	<div>
+	</div>
+      </fast-dialog>
+    </div>
+  </div>
+</fast-design-system-provider>
+
+<script type=&quot;text/javascript&quot;>
+  
+</script>
+
+<script type=&quot;text/javascript&quot;>
+  function openNav() {
+    document.getElementById(&quot;sidebar&quot;).classList.remove(&quot;hidden&quot;);
+    document.getElementById(&quot;sidebar-button&quot;).onclick = closeNav;
+  }
+
+  function closeNav() {
+    document.getElementById(&quot;sidebar&quot;).classList.add(&quot;hidden&quot;);
+    document.getElementById(&quot;sidebar-button&quot;).onclick = openNav;
+  }
+
+  var modal = document.getElementById(&quot;pn-Modal&quot;);
+  var span = document.getElementById(&quot;pn-closeModal&quot;);
+
+  span.onclick = function() {
+    modal.style.display = &quot;none&quot;;
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = &quot;none&quot;;
+    }
+  }
+</script>
+
+<div id=&quot;cf35c9f7-f3a6-40f1-a22d-219f87a5bc07&quot; data-root-id=&quot;p1009&quot; style=&quot;display: contents;&quot;></div>
+<div id=&quot;ac25cbd1-d7f7-4da3-a4de-f1cb080cc8e0&quot; data-root-id=&quot;p1012&quot; style=&quot;display: contents;&quot;></div>
+<div id=&quot;a586ae71-7159-4ba3-96f6-aa8a2fb5f799&quot; data-root-id=&quot;p1002&quot; style=&quot;display: contents;&quot;></div>
+<div id=&quot;c3372e24-4799-4daf-bed7-68503d2ec2a2&quot; data-root-id=&quot;p1013&quot; style=&quot;display: contents;&quot;></div>
+
+  <py-config>
+    packages = ['https://cdn.holoviz.org/panel/wheels/bokeh-3.3.2-py3-none-any.whl','https://cdn.holoviz.org/panel/1.3.6/dist/wheels/panel-1.3.6-py3-none-any.whl','pyodide-http==0.2.1']
+    </py-config>
+    <py-script>
+    import asyncio
+
+    from panel.io.pyodide import init_doc, write_doc
+
+    init_doc()
+
+    import panel as pn
+
+    pn.extension()
+
+    slider = pn.widgets.IntSlider(name=&quot;Select a value&quot;, value=10, start=0, end=100)
+    component = pn.Column(
+        pn.rx(&quot;You selected: {}&quot;).format(slider),
+    )
+    pn.template.FastListTemplate(
+      title=&quot;Panel in Quarto&quot;, main=[component]
+    ).servable()
+
+    asyncio.ensure_future(write_doc());</py-script>
+    <script type=&quot;application/json&quot; id=&quot;p1083&quot;>
+      {&quot;8b553712-fdfd-4410-9ebf-fd03fb867e15&quot;:{&quot;version&quot;:&quot;3.3.2&quot;,&quot;title&quot;:&quot;Panel in Quarto&quot;,&quot;roots&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.location.Location&quot;,&quot;id&quot;:&quot;p1002&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;location&quot;,&quot;reload&quot;:false}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.markup.HTML&quot;,&quot;id&quot;:&quot;p1009&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;js_area&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1043&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1040&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/fast.css&quot;}}],&quot;width&quot;:0,&quot;height&quot;:0,&quot;margin&quot;:0,&quot;sizing_mode&quot;:&quot;fixed&quot;,&quot;align&quot;:&quot;start&quot;,&quot;disable_math&quot;:true}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.reactive_html.ReactiveHTML&quot;,&quot;id&quot;:&quot;p1012&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;actions&quot;,&quot;subscribed_events&quot;:{&quot;type&quot;:&quot;set&quot;,&quot;entries&quot;:[&quot;dom_event&quot;]},&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1044&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;data&quot;:{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;TemplateActions1&quot;,&quot;id&quot;:&quot;p1010&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;TemplateActions00134&quot;}},&quot;scripts&quot;:{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;open_modal&quot;,[&quot;document.getElementById(&amp;amp;#x27;pn-Modal&amp;amp;#x27;).style.display = &amp;amp;#x27;block&amp;amp;#x27;&quot;]],[&quot;close_modal&quot;,[&quot;document.getElementById(&amp;amp;#x27;pn-Modal&amp;amp;#x27;).style.display = &amp;amp;#x27;none&amp;amp;#x27;&quot;]]]}}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.browser.BrowserInfo&quot;,&quot;id&quot;:&quot;p1013&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;browser_info&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.markup.HTML&quot;,&quot;id&quot;:&quot;p1016&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;busy_indicator&quot;,&quot;css_classes&quot;:[&quot;loader&quot;,&quot;light&quot;],&quot;stylesheets&quot;:[&quot;:host { --loading-spinner-size: 20px; }&quot;,&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1045&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1046&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loadingspinner.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;min_width&quot;:20,&quot;min_height&quot;:20,&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1017&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;main-140386063074640&quot;,&quot;tags&quot;:[&quot;main&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1047&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1048&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Row&quot;,&quot;id&quot;:&quot;p1018&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Row00116&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1049&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1050&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Row&quot;,&quot;id&quot;:&quot;p1019&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Row00125&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1051&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1052&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1020&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;WidgetBox00124&quot;,&quot;css_classes&quot;:[&quot;panel-widget-box&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1053&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1054&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/widgetbox.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1055&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Slider&quot;,&quot;id&quot;:&quot;p1022&quot;,&quot;attributes&quot;:{&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1056&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;title&quot;:&quot;Select a value&quot;,&quot;start&quot;:0,&quot;end&quot;:100,&quot;value&quot;:10}}]}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1026&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Column00121&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1079&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1080&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.markup.HTML&quot;,&quot;id&quot;:&quot;p1029&quot;,&quot;attributes&quot;:{&quot;css_classes&quot;:[&quot;markdown&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1060&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1061&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/markdown.css&quot;}},{&quot;id&quot;:&quot;p1040&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;text&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;You selected: 10&amp;amp;lt;/p&amp;amp;gt;\n&quot;}}]}}]}}]}}]}}],&quot;defs&quot;:[{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;ReactiveHTML1&quot;},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FlexBox1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;align_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;align_items&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;flex_direction&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;row&quot;},{&quot;name&quot;:&quot;flex_wrap&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;wrap&quot;},{&quot;name&quot;:&quot;justify_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FloatPanel1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;config&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;contained&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;right-top&quot;},{&quot;name&quot;:&quot;offsetx&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;offsety&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;theme&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;primary&quot;},{&quot;name&quot;:&quot;status&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;normalized&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;GridStack1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;mode&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;warn&quot;},{&quot;name&quot;:&quot;ncols&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;nrows&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;allow_resize&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;allow_drag&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;state&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;drag1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;slider_width&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:5},{&quot;name&quot;:&quot;slider_color&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;black&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:50}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;click1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;terminal_output&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;debug_name&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;clears&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;copy_to_clipboard1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;fill&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;none&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FastWrapper1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;object&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;style&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationAreaBase1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationArea1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;notifications&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;types&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;warning&quot;],[&quot;background&quot;,&quot;#ffc107&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-exclamation-triangle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]},{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;info&quot;],[&quot;background&quot;,&quot;#007bff&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-info-circle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]}]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;Notification&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;background&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;duration&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:3000},{&quot;name&quot;:&quot;icon&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;message&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;notification_type&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;_destroyed&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:false}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;TemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;BootstrapTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;MaterialTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]}]}}
+    </script>
+    <script type=&quot;text/javascript&quot;>
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('p1083').textContent;
+              const render_items = [{&quot;docid&quot;:&quot;8b553712-fdfd-4410-9ebf-fd03fb867e15&quot;,&quot;roots&quot;:{&quot;p1002&quot;:&quot;a586ae71-7159-4ba3-96f6-aa8a2fb5f799&quot;,&quot;p1009&quot;:&quot;cf35c9f7-f3a6-40f1-a22d-219f87a5bc07&quot;,&quot;p1012&quot;:&quot;ac25cbd1-d7f7-4da3-a4de-f1cb080cc8e0&quot;,&quot;p1013&quot;:&quot;c3372e24-4799-4daf-bed7-68503d2ec2a2&quot;,&quot;p1016&quot;:&quot;b76674a5-cf60-407a-a391-96ba6c1cba21&quot;,&quot;p1017&quot;:&quot;d72a3bdc-0f10-4b27-9d25-a3f57925c784&quot;},&quot;root_ids&quot;:[&quot;p1002&quot;,&quot;p1009&quot;,&quot;p1012&quot;,&quot;p1013&quot;,&quot;p1016&quot;,&quot;p1017&quot;]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log(&quot;Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing&quot;);
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != &quot;loading&quot;) fn();
+        else document.addEventListener(&quot;DOMContentLoaded&quot;, fn);
+      })();
+    </script>
+  </body>
+</html>" class="panel-app" onload="resizePanelApp(this)" allow="accelerometer;autoplay;camera;document-domain;encrypted-media;fullscreen;gamepad;geolocation;gyroscope;layout-animations;legacy-image-formats;microphone;oversized-images;payment;publickey-credentials-get;speaker-selection;sync-xhr;unoptimized-images;unsized-media;screen-wake-lock;web-share;xr-spatial-tracking"></iframe>
+
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
