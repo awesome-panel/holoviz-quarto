@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Quarto-HoloViz"
+  title: "holoviz-quarto"
   sidebar:
     style: "docked"
     search: true
@@ -15,7 +15,7 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/company/panel-org
       - icon: github
-        href: https://github.com/awesome-panel/quarto-holoviz
+        href: https://github.com/awesome-panel/holoviz-quarto
     contents:
     - href: index.qmd
       text: Introduction

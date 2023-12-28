@@ -17,7 +17,7 @@ Please note that a +40MB Python environment is loaded by the user for each appli
 
 ## Configuration
 
-You will need to install and configure the `quarto-holoviz` extension as described in the [Getting Started](getting-started.qmd) guide.
+You will need to install and configure the `holoviz-quarto` extension as described in the [Getting Started](getting-started.qmd) guide.
 
 ## Examples
 

@@ -2,7 +2,7 @@
 
 The purpose of this project is to **make it easy to use the HoloViz ecosystem with Quarto**.
 
-**Check out the [Quarto-HoloViz Documentation](https://awesome-panel.github.io/quarto-holoviz/)** to get inspired.
+**Check out the [holoviz-quarto Documentation](https://awesome-panel.github.io/holoviz-quarto/)** to get inspired.
 
 <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 50px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 50px;margin-right:10px">
 
@@ -13,8 +13,8 @@ This is currently an **experiment** only.
 ## Development
 
 ```bash
-git clone https://github.com/awesome-panel/quarto-holoviz
-conda create -n quarto-holoviz conda-forge r-quarto perl matplotlib panel hvplot jupyter
+git clone https://github.com/awesome-panel/holoviz-quarto
+conda create -n holoviz-quarto conda-forge r-quarto perl matplotlib panel hvplot jupyter
 ```
 
 To setup your development environment and learn more about quarto development check out the [Quarto Lua Development Guide](https://quarto.org/docs/extensions/lua.html).
