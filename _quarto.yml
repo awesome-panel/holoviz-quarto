@@ -4,11 +4,15 @@ project:
 
 website:
   title: "holoviz-quarto"
+  description: "The HoloViz-Quarto project makes it easy to use HoloViz with Quarto"
   sidebar:
+    title: false
+    logo: assets/logos/holoviz-quarto.png
+    logo-href: https://holoviz.org
+    logo-alt: "HoloViz logo."
     style: "docked"
     search: true
-    logo: https://holoviz.org/_static/holoviz-logo-unstacked.svg
-    logo-href: https://holoviz.org
+    background: "#f8f9fa"
     tools:
       - icon: twitter
         href: https://twitter.com/holoviz_org
@@ -26,6 +30,7 @@ website:
       - example-python.qmd
       - example-pyscript.qmd
       - example-panel-convert-python.qmd
+    
 
 format:
   html:

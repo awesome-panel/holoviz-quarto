@@ -10,10 +10,10 @@ This guide shows you how to use the `{panel-convert-python}` filter with [Quarto
 With the `{panel-convert-python}` filter you can insert entire, templated Panel applications into your documents running directly in the browser powered by PyScript.
 
 ::: {.callout-note}
-Please note that a +40MB Python environment is loaded by the user for each application you insert.
+Please note that a +40MB Python environment is loaded by the user for each application you insert with `{panel-convert-python}`.
 :::
 
-<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
+<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px">
 
 ## Configuration
 

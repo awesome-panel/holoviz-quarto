@@ -2,11 +2,9 @@
 
 The purpose of this project is to **make it easy to use the [HoloViz](https://holoviz.org/) ecosystem with [Quarto](https://quarto.org/)**.
 
-<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 50px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 50px;margin-right:10px">
-
 ## Embed the HoloViz Ecosystem
 
-With [HoloViz](https://holoviz.org/) you get access to a large ecosystem of components for visualizing your data
+With [HoloViz](https://holoviz.org/) you get access to a large ecosystem of tools for data visualization.
 
 ```{python}
 #| code-fold: true
@@ -19,7 +17,11 @@ pn.extension(design="material")
 gis_1880 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_1945-1949.png'
 gis_2015 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_2015-2019.png'
 
-pn.Swipe(gis_1880, gis_2015, height=450, sizing_mode="stretch_width")
+swipe = pn.Swipe(gis_1880, gis_2015, height=450, sizing_mode="stretch_width")
+pn.Column(
+  pn.chat.ChatMessage("Show me the global temperature change from 1945 to 2019", user="User"),
+  pn.chat.ChatMessage(swipe, user="Assistant"),
+)
 ```
 
 For inspiration check out the [Panel Component Gallery](https://panel.holoviz.org/reference/index.html).

@@ -7,7 +7,7 @@ include-in-header:
 
 This guide shows you how to use [HoloViz](https://holoviz.org/) with [PyScript](https://pyscript.net/) and [Quarto](https://quarto.org/) to create live and interactive documents.
 
-<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
+<img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 50px;margin-right:10px">
 
 ## Configuration
 

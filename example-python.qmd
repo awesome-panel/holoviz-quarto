@@ -5,8 +5,6 @@ format: html
 
 This guide shows you how to use the [HoloViz](https://holoviz.org/) ecosystem with [Quarto](https://quarto.org/) [`{python}` code blocks](https://quarto.org/docs/computations/python.html#code-blocks) to create live and interactive documents.
 
-<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
-
 ## Configuration
 
 ::: {.callout-note}

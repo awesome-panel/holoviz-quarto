@@ -21,7 +21,7 @@ This will
 - Install Quarto and its dependencies perl and jupyter
 - Install `panel` and other Python packages
 
-For alternative installation methods checkout the [Quarto Getting Started Guide](https://quarto.org/docs/get-started/).
+For alternative installation methods check out the [Quarto Getting Started Guide](https://quarto.org/docs/get-started/).
 
 ## Installing the `holoviz-quarto` extension
 
