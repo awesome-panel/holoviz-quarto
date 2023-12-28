@@ -3,7 +3,7 @@ title: Python
 format: html
 ---
 
-This guide shows you how how to use the HoloViz ecosystem with `{python}` code blocks.
+This guide shows you how to use the [HoloViz](https://holoviz.org/) ecosystem with [Quarto](https://quarto.org/) [`{python}` code blocks](https://quarto.org/docs/computations/python.html#code-blocks).
 
 <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
 
@@ -12,8 +12,6 @@ This guide shows you how how to use the HoloViz ecosystem with `{python}` code b
 ::: {.callout-note}
 For hvPlot, HoloViews or Panel to work with Quarto, you must remember to run the
 the `.extension` function to include the relevant css and javascript files.
-
-You can hide the code via `#| echo: false` or *fold* it using `#| code-fold: true`.
 :::
 
 ```{python}
