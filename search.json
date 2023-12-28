@@ -95,7 +95,7 @@
     "href": "example-pyscript.html",
     "title": "PyScript",
     "section": "",
-    "text": "This guide shows you how to use HoloViz with PyScript and Quarto to create live and interactive documents."
+    "text": "This guide shows you how to use PyScript with HoloViz and Quarto to create live and interactive documents."
   },
   {
     "objectID": "example-pyscript.html#configuration",

@@ -101,21 +101,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 .pn-container {
     width: 100%;
 }
-.loading {  
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABcklEQVR4AWNgyNoqwVC0dTMQ/wLi/3TCv8B2lgLtZijcsgUuQX+8mYGhaBuGz+kaEiDGgGJCCkYdwFW+43/jtiv/D1x7/H/2oVv/ZRr20NYBrCXb/qcsPfs/ZRkELztx9/+7d+/g+OjNJyBxUjHITJDZhB3AU7nj/+s3b0GWURODzASbjekAzCAH+/L4LQi+/+wVikEvXr8BiZOKQWaCzCY9DRj3Hvx/49ELsOVPX775H7PoND0TISJazPoO/Rev2z1aDuDF2h37/5dtuPQ/eelZUKiR5wCm4m3/FZr3koy9Zh77/+zVG3hi3XPl4X+lFlQ1TMUkZMO3b0nEmFkPWR6WDQfcAfSLgt3Yo4D2ibAclAiXARNhxY5hlA15gXFn2jtABZEJuCh+Sb+iGFEZPQVhzMro1RuQOKkYVhkN/uoYs0Fyki4NEsJNsoPXH/+fRfsmGf3xqAMGRdds80B2TiHd8+KtmxgK6do9/wmyE9Q9BwC0YrQKZdeVgAAAAABJRU5ErkJggg==');  
-  background-repeat: no-repeat;  
-  background-position: center;
-  background-size: 20px 20px;
-  width: 50px; /* adjust to the size of your spinner image */  
-  height: 50px; /* adjust to the size of your spinner image */  
-  opacity: 0.3; 
-  margin-bottom: 10px;
-  animation: spin 2s linear infinite;
-}  
-@keyframes spin {  
-  0% { transform: rotate(0deg); }  
-  100% { transform: rotate(360deg); }  
-} 
+/* Source: https://loading.io/css/ */
+.loading:after {
+  content: " ";
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 12px;
+  border-radius: 50%;
+  border: 6px solid gray;
+  border-color: gray transparent gray transparent;
+  animation: lds-dual-ring 2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 </style>
 <script type="module">
     function removeLoading(){
@@ -267,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This guide shows you how to use <a href="https://holoviz.org/">HoloViz</a> with <a href="https://pyscript.net/">PyScript</a> and <a href="https://quarto.org/">Quarto</a> to create live and interactive documents.</p>
+<p>This guide shows you how to use <a href="https://pyscript.net/">PyScript</a> with <a href="https://holoviz.org/">HoloViz</a> and <a href="https://quarto.org/">Quarto</a> to create live and interactive documents.</p>
 <p><img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 50px;margin-right:10px"></p>
 <section id="configuration" class="level2">
 <h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
@@ -856,12 +861,12 @@ if (window.Jupyter !== undefined) {
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<div id="136ce40e-25b1-44ab-9d8a-42ca4879e83d">
-  <div id="d280f79b-3e61-4da5-ac24-061ad5affdcf" data-root-id="136ce40e-25b1-44ab-9d8a-42ca4879e83d" style="display: contents;"></div>
+<div id="468a9d76-c491-4106-a7b9-dd8a2aefb064">
+  <div id="a77e064e-a718-4aa4-bc91-b63dcceb8a06" data-root-id="468a9d76-c491-4106-a7b9-dd8a2aefb064" style="display: contents;"></div>
 </div>
 <script type="application/javascript">(function(root) {
-  var docs_json = {"8f8b33c1-bad4-49fa-a3e9-c8ec715fadae":{"version":"3.3.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"136ce40e-25b1-44ab-9d8a-42ca4879e83d"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"57f303b0-9ad1-400f-84c9-e929ca56b968","attributes":{"plot_id":"136ce40e-25b1-44ab-9d8a-42ca4879e83d","comm_id":"aabaee6a08c84cb2958caa67ded9e7aa","client_comm_id":"ff64198790cb4e22b93b5ada911d6294"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"copy_to_clipboard1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"value","kind":"Any","default":null}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]}]}};
-  var render_items = [{"docid":"8f8b33c1-bad4-49fa-a3e9-c8ec715fadae","roots":{"136ce40e-25b1-44ab-9d8a-42ca4879e83d":"d280f79b-3e61-4da5-ac24-061ad5affdcf"},"root_ids":["136ce40e-25b1-44ab-9d8a-42ca4879e83d"]}];
+  var docs_json = {"3e741e9f-9741-4d8d-b4dc-8481688a0463":{"version":"3.3.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"468a9d76-c491-4106-a7b9-dd8a2aefb064"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"4b31965b-b396-4791-ae11-186989669b69","attributes":{"plot_id":"468a9d76-c491-4106-a7b9-dd8a2aefb064","comm_id":"d68fb55fd5db42d1a87263c4e0f98bcc","client_comm_id":"51a48245a43b4ea3be62b92deb123c31"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"copy_to_clipboard1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"value","kind":"Any","default":null}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]}]}};
+  var render_items = [{"docid":"3e741e9f-9741-4d8d-b4dc-8481688a0463","roots":{"468a9d76-c491-4106-a7b9-dd8a2aefb064":"a77e064e-a718-4aa4-bc91-b63dcceb8a06"},"root_ids":["468a9d76-c491-4106-a7b9-dd8a2aefb064"]}];
   var docs = Object.values(docs_json)
   if (!docs) {
     return
@@ -940,7 +945,7 @@ pn.extension("deckgl", design="material")
 <section id="basic" class="level3">
 <h3 class="anchored" data-anchor-id="basic">Basic</h3>
 <p>A <strong>Panel PyScript</strong> application embedded in a Quarto doc</p>
-<div id="out-1" class="loading pn-container">
+<div id="out-1" class="lds-dual-ring pn-container">
 
 </div>
 <script type="py">
@@ -1381,7 +1386,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    - example-pyscript-header.html</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>This guide shows you how to use <span class="co">[</span><span class="ot">HoloViz</span><span class="co">](https://holoviz.org/)</span> with <span class="co">[</span><span class="ot">PyScript</span><span class="co">](https://pyscript.net/)</span> and <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span> to create live and interactive documents.</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>This guide shows you how to use <span class="co">[</span><span class="ot">PyScript</span><span class="co">](https://pyscript.net/)</span> with <span class="co">[</span><span class="ot">HoloViz</span><span class="co">](https://holoviz.org/)</span> and <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span> to create live and interactive documents.</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://pyscript.net/assets/images/pyscript-sticker-black.svg"</span> <span class="er">style</span><span class="ot">=</span><span class="st">"height: 50px;margin-right:10px"</span><span class="kw">&gt;</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
@@ -1418,7 +1423,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>A **Panel PyScript** application embedded in a Quarto doc</span>
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-1"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-1"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"lds-dual-ring pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
 <span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
