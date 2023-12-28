@@ -64,6 +64,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./example-panel-convert-python.html" rel="next">
+<link href="./example-python.html" rel="prev">
+<link href="./assets/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -129,6 +132,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="_quarto.css">
+<meta property="og:title" content="holoviz-quarto - PyScript">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://pyscript.net/assets/images/pyscript-sticker-black.svg">
+<meta property="og:site-name" content="holoviz-quarto">
+<meta name="twitter:title" content="holoviz-quarto - PyScript">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://pyscript.net/assets/images/pyscript-sticker-black.svg">
+<meta name="twitter:site" content="@HoloViz_org">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked">
@@ -161,6 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a href="https://twitter.com/holoviz_org" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
     <a href="https://www.linkedin.com/company/panel-org" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
     <a href="https://github.com/awesome-panel/holoviz-quarto" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://discourse.holoviz.org" rel="" title="HoloViz Discourse" class="quarto-navigation-tool px-1" aria-label="HoloViz Discourse"><i class="bi bi-chat-text"></i></a>
+    <a href="https://discord.gg/UXdtYyGVQX" rel="" title="HoloViz Discord" class="quarto-navigation-tool px-1" aria-label="HoloViz Discord"><i class="bi bi-discord"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -231,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#editor" id="toc-editor" class="nav-link" data-scroll-target="#editor">Editor</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/awesome-panel/holoviz-quarto/edit/main/example-pyscript.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/awesome-panel/holoviz-quarto/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -842,12 +856,12 @@ if (window.Jupyter !== undefined) {
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<div id="de91e66e-0d18-4deb-9152-ff08da47ccce">
-  <div id="fef721b5-bd87-43f9-a21b-1cc2f99898b6" data-root-id="de91e66e-0d18-4deb-9152-ff08da47ccce" style="display: contents;"></div>
+<div id="136ce40e-25b1-44ab-9d8a-42ca4879e83d">
+  <div id="d280f79b-3e61-4da5-ac24-061ad5affdcf" data-root-id="136ce40e-25b1-44ab-9d8a-42ca4879e83d" style="display: contents;"></div>
 </div>
 <script type="application/javascript">(function(root) {
-  var docs_json = {"a2116b45-09c9-4439-9c8d-f7fc97e645c2":{"version":"3.3.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"de91e66e-0d18-4deb-9152-ff08da47ccce"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"28738011-0d2f-48db-a8be-f2d3d6f2e2ef","attributes":{"plot_id":"de91e66e-0d18-4deb-9152-ff08da47ccce","comm_id":"57dc824610864ebd9f221110be3869d8","client_comm_id":"f2bb7975320444b7a101ff18a1a36e4e"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"copy_to_clipboard1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"value","kind":"Any","default":null}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]}]}};
-  var render_items = [{"docid":"a2116b45-09c9-4439-9c8d-f7fc97e645c2","roots":{"de91e66e-0d18-4deb-9152-ff08da47ccce":"fef721b5-bd87-43f9-a21b-1cc2f99898b6"},"root_ids":["de91e66e-0d18-4deb-9152-ff08da47ccce"]}];
+  var docs_json = {"8f8b33c1-bad4-49fa-a3e9-c8ec715fadae":{"version":"3.3.2","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.browser.BrowserInfo","id":"136ce40e-25b1-44ab-9d8a-42ca4879e83d"},{"type":"object","name":"panel.models.comm_manager.CommManager","id":"57f303b0-9ad1-400f-84c9-e929ca56b968","attributes":{"plot_id":"136ce40e-25b1-44ab-9d8a-42ca4879e83d","comm_id":"aabaee6a08c84cb2958caa67ded9e7aa","client_comm_id":"ff64198790cb4e22b93b5ada911d6294"}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"copy_to_clipboard1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"value","kind":"Any","default":null}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]}]}};
+  var render_items = [{"docid":"8f8b33c1-bad4-49fa-a3e9-c8ec715fadae","roots":{"136ce40e-25b1-44ab-9d8a-42ca4879e83d":"d280f79b-3e61-4da5-ac24-061ad5affdcf"},"root_ids":["136ce40e-25b1-44ab-9d8a-42ca4879e83d"]}];
   var docs = Object.values(docs_json)
   if (!docs) {
     return
@@ -1063,7 +1077,7 @@ pn.Column(slider, deck_gl).servable(target="out-4")
 </section>
 </section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1347,7 +1361,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./example-python.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./example-panel-convert-python.html" class="pagination-link">
+        <span class="nav-page-text">Panel Convert</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> PyScript</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
@@ -1364,165 +1390,177 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>In order to use Panel with Pyscript you will need to run <span class="in">`pn.extension(...)`</span> in a <span class="in">`{python}`</span> code block as you would normally do.</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>pn.extension(<span class="st">"deckgl"</span>, design<span class="op">=</span><span class="st">"material"</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>In addition you must also configure PyScript in a <span class="in">`&lt;script type="py" ...&gt;`</span> tag</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="in">```html</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script type<span class="op">=</span><span class="st">"py"</span> config<span class="op">=</span><span class="ch">'{</span><span class="er">"packages":["panel", "hvplot", "matplotlib"]}</span><span class="ch">'</span><span class="op">&gt;</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>import panel as pn</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span>extension<span class="op">(</span><span class="st">"deckgl"</span><span class="op">)</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span> <span class="er">config</span><span class="ot">=</span><span class="st">'{"packages":["panel", "hvplot", "matplotlib"]}'</span><span class="kw">&gt;</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">extension</span>(<span class="st">"deckgl"</span><span class="op">,</span> design<span class="op">=</span><span class="st">"material"</span>)</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Basic</span></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>A **Panel PyScript** application embedded in a Quarto doc</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-1"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span><span class="at">widgets</span><span class="op">.</span><span class="fu">IntSlider</span>(name<span class="op">=</span><span class="st">"Select a value"</span><span class="op">,</span> value<span class="op">=</span><span class="dv">10</span><span class="op">,</span> start<span class="op">=</span><span class="dv">0</span><span class="op">,</span> end<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">Column</span>(</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>    pn<span class="op">.</span><span class="fu">rx</span>(<span class="st">"You selected: {}"</span>)<span class="op">.</span><span class="fu">format</span>(slider)<span class="op">,</span></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-1"</span>)</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Matplotlib</span></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>A **Panel Matplotlib PyScript** application embedded in a Quarto doc</span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-2"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib<span class="op">.</span><span class="at">pyplot</span> <span class="im">as</span> plt</span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>def <span class="fu">plot</span>(factor)<span class="op">:</span></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>  r <span class="op">=</span> np<span class="op">.</span><span class="fu">arange</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="fl">0.01</span>)</span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>  theta <span class="op">=</span> factor <span class="op">*</span> np<span class="op">.</span><span class="at">pi</span> <span class="op">*</span> r</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  fig<span class="op">,</span> ax <span class="op">=</span> plt<span class="op">.</span><span class="fu">subplots</span>(</span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>    subplot_kw <span class="op">=</span> {<span class="st">'projection'</span><span class="op">:</span> <span class="st">'polar'</span>} </span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>  ax<span class="op">.</span><span class="fu">plot</span>(theta<span class="op">,</span> r)</span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>  ax<span class="op">.</span><span class="fu">set_rticks</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="fl">1.2</span><span class="op">,</span> <span class="fl">1.5</span><span class="op">,</span> <span class="dv">2</span>])</span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  ax<span class="op">.</span><span class="fu">grid</span>(True)</span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  plt<span class="op">.</span><span class="fu">close</span>(fig)</span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> fig</span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span><span class="at">widgets</span><span class="op">.</span><span class="fu">FloatSlider</span>(value<span class="op">=</span><span class="dv">2</span><span class="op">,</span> start<span class="op">=</span><span class="dv">1</span><span class="op">,</span> end<span class="op">=</span><span class="dv">4</span><span class="op">,</span> step<span class="op">=</span><span class="fl">0.25</span><span class="op">,</span> name<span class="op">=</span><span class="st">"Factor"</span>)</span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> pn<span class="op">.</span><span class="at">pane</span><span class="op">.</span><span class="fu">Matplotlib</span>(pn<span class="op">.</span><span class="fu">rx</span>(plot)(slider)<span class="op">,</span> tight<span class="op">=</span>True<span class="op">,</span> format<span class="op">=</span><span class="st">"svg"</span><span class="op">,</span> height<span class="op">=</span><span class="dv">400</span><span class="op">,</span> sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span>)</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">Column</span>(</span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>  slider<span class="op">,</span> plot<span class="op">,</span> sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-2"</span>)</span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### hvPlot</span></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>A **Panel hvPlot PyScript** application embedded in a Quarto doc</span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-3"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hvplot<span class="op">.</span><span class="at">pandas</span></span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>frequencies <span class="op">=</span> [<span class="fl">0.5</span><span class="op">,</span> <span class="fl">0.75</span><span class="op">,</span> <span class="fl">1.0</span><span class="op">,</span> <span class="fl">1.25</span>]</span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>def <span class="fu">sine_curve</span>(phase<span class="op">,</span> freq)<span class="op">:</span></span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>    xvals <span class="op">=</span> np<span class="op">.</span><span class="fu">arange</span>(<span class="dv">100</span>)</span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>    yvals <span class="op">=</span> np<span class="op">.</span><span class="fu">sin</span>(phase<span class="op">+</span>freq<span class="op">*</span>xvals)</span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd<span class="op">.</span><span class="fu">DataFrame</span>({<span class="st">'x'</span><span class="op">:</span> xvals<span class="op">,</span> <span class="st">'y'</span><span class="op">:</span> yvals<span class="op">,</span> <span class="st">'phase'</span><span class="op">:</span> phase<span class="op">,</span> <span class="st">'freq'</span><span class="op">:</span> freq}<span class="op">,</span> columns<span class="op">=</span>[<span class="st">'x'</span><span class="op">,</span> <span class="st">'y'</span><span class="op">,</span> <span class="st">'phase'</span><span class="op">,</span> <span class="st">'freq'</span>])</span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd<span class="op">.</span><span class="fu">concat</span>([<span class="fu">sine_curve</span>(<span class="dv">0</span><span class="op">,</span> f) <span class="cf">for</span> f <span class="kw">in</span> frequencies])</span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> df<span class="op">.</span><span class="at">hvplot</span><span class="op">.</span><span class="fu">line</span>(<span class="st">'x'</span><span class="op">,</span> <span class="st">'y'</span><span class="op">,</span> groupby<span class="op">=</span><span class="st">'freq'</span><span class="op">,</span> responsive<span class="op">=</span>True<span class="op">,</span> height<span class="op">=</span><span class="dv">400</span><span class="op">,</span> widget_location<span class="op">=</span><span class="st">"top_left"</span>)</span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">panel</span>(plot)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-3"</span>)</span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a><span class="fu">### Deck.gl</span></span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-4"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>MAPBOX_KEY <span class="op">=</span> <span class="st">"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ"</span></span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>def <span class="fu">json_spec</span>(zoom<span class="op">=</span><span class="dv">6</span>)<span class="op">:</span></span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>{</span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>        <span class="st">"initialViewState"</span><span class="op">:</span> {</span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>            <span class="st">"bearing"</span><span class="op">:</span> <span class="op">-</span><span class="fl">27.36</span><span class="op">,</span></span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>            <span class="st">"latitude"</span><span class="op">:</span> <span class="fl">52.2323</span><span class="op">,</span></span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>            <span class="st">"longitude"</span><span class="op">:</span> <span class="op">-</span><span class="fl">1.415</span><span class="op">,</span></span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>            <span class="st">"maxZoom"</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span></span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>            <span class="st">"minZoom"</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pitch"</span><span class="op">:</span> <span class="fl">40.5</span><span class="op">,</span></span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>            <span class="st">"zoom"</span><span class="op">:</span> zoom</span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>        <span class="st">"layers"</span><span class="op">:</span> [{</span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>            <span class="st">"@@type"</span><span class="op">:</span> <span class="st">"HexagonLayer"</span><span class="op">,</span></span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>            <span class="st">"autoHighlight"</span><span class="op">:</span> True<span class="op">,</span></span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>            <span class="st">"coverage"</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>            <span class="st">"data"</span><span class="op">:</span> <span class="st">"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv"</span><span class="op">,</span></span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>            <span class="st">"elevationRange"</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">3000</span>]<span class="op">,</span></span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>            <span class="st">"elevationScale"</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>            <span class="st">"extruded"</span><span class="op">:</span> True<span class="op">,</span></span>
-<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>            <span class="st">"getPosition"</span><span class="op">:</span> <span class="st">"@@=[lng, lat]"</span><span class="op">,</span></span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>            <span class="st">"id"</span><span class="op">:</span> <span class="st">"8a553b25-ef3a-489c-bbe2-e102d18a3211"</span><span class="op">,</span></span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pickable"</span><span class="op">:</span> True</span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>        }]<span class="op">,</span></span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>        <span class="st">"mapStyle"</span><span class="op">:</span> <span class="st">"mapbox://styles/mapbox/dark-v9"</span><span class="op">,</span></span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>        <span class="st">"views"</span><span class="op">:</span> [</span>
-<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>            {<span class="st">"@@type"</span><span class="op">:</span> <span class="st">"MapView"</span><span class="op">,</span> <span class="st">"controller"</span><span class="op">:</span> True}</span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>        ]</span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span><span class="at">widgets</span><span class="op">.</span><span class="fu">IntSlider</span>(value<span class="op">=</span><span class="dv">6</span><span class="op">,</span> start<span class="op">=</span><span class="dv">3</span><span class="op">,</span> end<span class="op">=</span><span class="dv">10</span><span class="op">,</span> name<span class="op">=</span><span class="st">"Zoom"</span>)</span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>deck_gl <span class="op">=</span> pn<span class="op">.</span><span class="at">pane</span><span class="op">.</span><span class="fu">DeckGL</span>(pn<span class="op">.</span><span class="fu">rx</span>(json_spec)(slider)<span class="op">,</span> mapbox_api_key<span class="op">=</span>MAPBOX_KEY<span class="op">,</span> sizing_mode<span class="op">=</span><span class="st">'stretch_width'</span><span class="op">,</span> height<span class="op">=</span><span class="dv">600</span>)</span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">Column</span>(slider<span class="op">,</span> deck_gl)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-4"</span>)</span>
-<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
-<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a><span class="fu">### Editor</span></span>
-<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>I would really like to include an example of using the PyScript <span class="in">`py-editor`</span>. But currently I don't know how to get it working.</span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>See <span class="co">[</span><span class="ot">PyScript #1907</span><span class="co">](https://github.com/pyscript/pyscript/discussions/1907)</span>.</span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>pn.extension(<span class="st">"deckgl"</span>, design<span class="op">=</span><span class="st">"material"</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>In addition you must also configure PyScript in a <span class="in">`&lt;script type="py" ...&gt;`</span> tag</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="in">```html</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script type<span class="op">=</span><span class="st">"py"</span> config<span class="op">=</span><span class="ch">'{</span><span class="er">"packages":["panel", "hvplot", "matplotlib"]}</span><span class="ch">'</span><span class="op">&gt;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>import panel as pn</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span>extension<span class="op">(</span><span class="st">"deckgl"</span><span class="op">)</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span> <span class="er">config</span><span class="ot">=</span><span class="st">'{"packages":["panel", "hvplot", "matplotlib"]}'</span><span class="kw">&gt;</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">extension</span>(<span class="st">"deckgl"</span><span class="op">,</span> design<span class="op">=</span><span class="st">"material"</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### Basic</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>A **Panel PyScript** application embedded in a Quarto doc</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-1"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span><span class="at">widgets</span><span class="op">.</span><span class="fu">IntSlider</span>(name<span class="op">=</span><span class="st">"Select a value"</span><span class="op">,</span> value<span class="op">=</span><span class="dv">10</span><span class="op">,</span> start<span class="op">=</span><span class="dv">0</span><span class="op">,</span> end<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">Column</span>(</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>    pn<span class="op">.</span><span class="fu">rx</span>(<span class="st">"You selected: {}"</span>)<span class="op">.</span><span class="fu">format</span>(slider)<span class="op">,</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-1"</span>)</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Matplotlib</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>A **Panel Matplotlib PyScript** application embedded in a Quarto doc</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-2"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib<span class="op">.</span><span class="at">pyplot</span> <span class="im">as</span> plt</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>def <span class="fu">plot</span>(factor)<span class="op">:</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>  r <span class="op">=</span> np<span class="op">.</span><span class="fu">arange</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="fl">0.01</span>)</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  theta <span class="op">=</span> factor <span class="op">*</span> np<span class="op">.</span><span class="at">pi</span> <span class="op">*</span> r</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>  fig<span class="op">,</span> ax <span class="op">=</span> plt<span class="op">.</span><span class="fu">subplots</span>(</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    subplot_kw <span class="op">=</span> {<span class="st">'projection'</span><span class="op">:</span> <span class="st">'polar'</span>} </span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>  ax<span class="op">.</span><span class="fu">plot</span>(theta<span class="op">,</span> r)</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  ax<span class="op">.</span><span class="fu">set_rticks</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="fl">1.2</span><span class="op">,</span> <span class="fl">1.5</span><span class="op">,</span> <span class="dv">2</span>])</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  ax<span class="op">.</span><span class="fu">grid</span>(True)</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  plt<span class="op">.</span><span class="fu">close</span>(fig)</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> fig</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span><span class="at">widgets</span><span class="op">.</span><span class="fu">FloatSlider</span>(value<span class="op">=</span><span class="dv">2</span><span class="op">,</span> start<span class="op">=</span><span class="dv">1</span><span class="op">,</span> end<span class="op">=</span><span class="dv">4</span><span class="op">,</span> step<span class="op">=</span><span class="fl">0.25</span><span class="op">,</span> name<span class="op">=</span><span class="st">"Factor"</span>)</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> pn<span class="op">.</span><span class="at">pane</span><span class="op">.</span><span class="fu">Matplotlib</span>(pn<span class="op">.</span><span class="fu">rx</span>(plot)(slider)<span class="op">,</span> tight<span class="op">=</span>True<span class="op">,</span> format<span class="op">=</span><span class="st">"svg"</span><span class="op">,</span> height<span class="op">=</span><span class="dv">400</span><span class="op">,</span> sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span>)</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">Column</span>(</span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>  slider<span class="op">,</span> plot<span class="op">,</span> sizing_mode<span class="op">=</span><span class="st">"stretch_width"</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-2"</span>)</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="fu">### hvPlot</span></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>A **Panel hvPlot PyScript** application embedded in a Quarto doc</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-3"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hvplot<span class="op">.</span><span class="at">pandas</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>frequencies <span class="op">=</span> [<span class="fl">0.5</span><span class="op">,</span> <span class="fl">0.75</span><span class="op">,</span> <span class="fl">1.0</span><span class="op">,</span> <span class="fl">1.25</span>]</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>def <span class="fu">sine_curve</span>(phase<span class="op">,</span> freq)<span class="op">:</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>    xvals <span class="op">=</span> np<span class="op">.</span><span class="fu">arange</span>(<span class="dv">100</span>)</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>    yvals <span class="op">=</span> np<span class="op">.</span><span class="fu">sin</span>(phase<span class="op">+</span>freq<span class="op">*</span>xvals)</span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd<span class="op">.</span><span class="fu">DataFrame</span>({<span class="st">'x'</span><span class="op">:</span> xvals<span class="op">,</span> <span class="st">'y'</span><span class="op">:</span> yvals<span class="op">,</span> <span class="st">'phase'</span><span class="op">:</span> phase<span class="op">,</span> <span class="st">'freq'</span><span class="op">:</span> freq}<span class="op">,</span> columns<span class="op">=</span>[<span class="st">'x'</span><span class="op">,</span> <span class="st">'y'</span><span class="op">,</span> <span class="st">'phase'</span><span class="op">,</span> <span class="st">'freq'</span>])</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd<span class="op">.</span><span class="fu">concat</span>([<span class="fu">sine_curve</span>(<span class="dv">0</span><span class="op">,</span> f) <span class="cf">for</span> f <span class="kw">in</span> frequencies])</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>plot <span class="op">=</span> df<span class="op">.</span><span class="at">hvplot</span><span class="op">.</span><span class="fu">line</span>(<span class="st">'x'</span><span class="op">,</span> <span class="st">'y'</span><span class="op">,</span> groupby<span class="op">=</span><span class="st">'freq'</span><span class="op">,</span> responsive<span class="op">=</span>True<span class="op">,</span> height<span class="op">=</span><span class="dv">400</span><span class="op">,</span> widget_location<span class="op">=</span><span class="st">"top_left"</span>)</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">panel</span>(plot)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-3"</span>)</span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### Deck.gl</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">"out-4"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"loading pn-container"</span><span class="kw">&gt;&lt;/div&gt;</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">"py"</span><span class="kw">&gt;</span></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> panel <span class="im">as</span> pn</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>MAPBOX_KEY <span class="op">=</span> <span class="st">"pk.eyJ1IjoicGFuZWxvcmciLCJhIjoiY2s1enA3ejhyMWhmZjNobjM1NXhtbWRrMyJ9.B_frQsAVepGIe-HiOJeqvQ"</span></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>def <span class="fu">json_spec</span>(zoom<span class="op">=</span><span class="dv">6</span>)<span class="op">:</span></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>{</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>        <span class="st">"initialViewState"</span><span class="op">:</span> {</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>            <span class="st">"bearing"</span><span class="op">:</span> <span class="op">-</span><span class="fl">27.36</span><span class="op">,</span></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>            <span class="st">"latitude"</span><span class="op">:</span> <span class="fl">52.2323</span><span class="op">,</span></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>            <span class="st">"longitude"</span><span class="op">:</span> <span class="op">-</span><span class="fl">1.415</span><span class="op">,</span></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>            <span class="st">"maxZoom"</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span></span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>            <span class="st">"minZoom"</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pitch"</span><span class="op">:</span> <span class="fl">40.5</span><span class="op">,</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>            <span class="st">"zoom"</span><span class="op">:</span> zoom</span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>        <span class="st">"layers"</span><span class="op">:</span> [{</span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>            <span class="st">"@@type"</span><span class="op">:</span> <span class="st">"HexagonLayer"</span><span class="op">,</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>            <span class="st">"autoHighlight"</span><span class="op">:</span> True<span class="op">,</span></span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>            <span class="st">"coverage"</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>            <span class="st">"data"</span><span class="op">:</span> <span class="st">"https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv"</span><span class="op">,</span></span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>            <span class="st">"elevationRange"</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">3000</span>]<span class="op">,</span></span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>            <span class="st">"elevationScale"</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>            <span class="st">"extruded"</span><span class="op">:</span> True<span class="op">,</span></span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>            <span class="st">"getPosition"</span><span class="op">:</span> <span class="st">"@@=[lng, lat]"</span><span class="op">,</span></span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>            <span class="st">"id"</span><span class="op">:</span> <span class="st">"8a553b25-ef3a-489c-bbe2-e102d18a3211"</span><span class="op">,</span></span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pickable"</span><span class="op">:</span> True</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>        }]<span class="op">,</span></span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>        <span class="st">"mapStyle"</span><span class="op">:</span> <span class="st">"mapbox://styles/mapbox/dark-v9"</span><span class="op">,</span></span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>        <span class="st">"views"</span><span class="op">:</span> [</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>            {<span class="st">"@@type"</span><span class="op">:</span> <span class="st">"MapView"</span><span class="op">,</span> <span class="st">"controller"</span><span class="op">:</span> True}</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span><span class="at">widgets</span><span class="op">.</span><span class="fu">IntSlider</span>(value<span class="op">=</span><span class="dv">6</span><span class="op">,</span> start<span class="op">=</span><span class="dv">3</span><span class="op">,</span> end<span class="op">=</span><span class="dv">10</span><span class="op">,</span> name<span class="op">=</span><span class="st">"Zoom"</span>)</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>deck_gl <span class="op">=</span> pn<span class="op">.</span><span class="at">pane</span><span class="op">.</span><span class="fu">DeckGL</span>(pn<span class="op">.</span><span class="fu">rx</span>(json_spec)(slider)<span class="op">,</span> mapbox_api_key<span class="op">=</span>MAPBOX_KEY<span class="op">,</span> sizing_mode<span class="op">=</span><span class="st">'stretch_width'</span><span class="op">,</span> height<span class="op">=</span><span class="dv">600</span>)</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span><span class="fu">Column</span>(slider<span class="op">,</span> deck_gl)<span class="op">.</span><span class="fu">servable</span>(target<span class="op">=</span><span class="st">"out-4"</span>)</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### Editor</span></span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>I would really like to include an example of using the PyScript <span class="in">`py-editor`</span>. But currently I don't know how to get it working.</span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>See <span class="co">[</span><span class="ot">PyScript #1907</span><span class="co">](https://github.com/pyscript/pyscript/discussions/1907)</span>.</span>
 <span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a><span class="in">```html</span></span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script type<span class="op">=</span><span class="st">"py-editor"</span><span class="op">&gt;</span></span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>import panel as pn</span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span>extension<span class="op">()</span></span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span>widgets<span class="op">.</span>IntSlider<span class="op">(</span>name<span class="op">=</span><span class="st">"Select a value"</span><span class="op">,</span> value<span class="op">=</span><span class="dv">10</span><span class="op">,</span> start<span class="op">=</span><span class="dv">0</span><span class="op">,</span> end<span class="op">=</span><span class="dv">100</span><span class="op">)</span></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span>Column<span class="op">(</span></span>
-<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>    pn<span class="op">.</span>rx<span class="op">(</span><span class="st">"You selected: {}"</span><span class="op">).</span>format<span class="op">(</span>slider<span class="op">),</span></span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a><span class="op">).</span>servable<span class="op">(</span>target<span class="op">=</span><span class="st">"editor"</span><span class="op">)</span></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">"editor"</span> class<span class="op">=</span><span class="st">"loading pn-container"</span><span class="op">&gt;&lt;/</span>div<span class="op">&gt;</span></span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>There are other <span class="in">`py-editor`</span> improvements I would really like.</span>
-<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Run Editor on page load | PyScript #1909</span><span class="co">](https://github.com/pyscript/pyscript/discussions/1909)</span></span>
-<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Support tab indentation | PyScript #1908</span><span class="co">](https://github.com/pyscript/pyscript/discussions/1908)</span></span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a><span class="in">```html</span></span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script type<span class="op">=</span><span class="st">"py-editor"</span><span class="op">&gt;</span></span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>import panel as pn</span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span>extension<span class="op">()</span></span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>slider <span class="op">=</span> pn<span class="op">.</span>widgets<span class="op">.</span>IntSlider<span class="op">(</span>name<span class="op">=</span><span class="st">"Select a value"</span><span class="op">,</span> value<span class="op">=</span><span class="dv">10</span><span class="op">,</span> start<span class="op">=</span><span class="dv">0</span><span class="op">,</span> end<span class="op">=</span><span class="dv">100</span><span class="op">)</span></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>pn<span class="op">.</span>Column<span class="op">(</span></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>    pn<span class="op">.</span>rx<span class="op">(</span><span class="st">"You selected: {}"</span><span class="op">).</span>format<span class="op">(</span>slider<span class="op">),</span></span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a><span class="op">).</span>servable<span class="op">(</span>target<span class="op">=</span><span class="st">"editor"</span><span class="op">)</span></span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">"editor"</span> class<span class="op">=</span><span class="st">"loading pn-container"</span><span class="op">&gt;&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a>There are other <span class="in">`py-editor`</span> improvements I would really like.</span>
+<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Run Editor on page load | PyScript #1909</span><span class="co">](https://github.com/pyscript/pyscript/discussions/1909)</span></span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Support tab indentation | PyScript #1908</span><span class="co">](https://github.com/pyscript/pyscript/discussions/1908)</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">© Copyright 2023 Awesomme Panel contributors</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
