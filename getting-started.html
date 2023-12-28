@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Quarto-HoloViz – getting-started</title>
+<title>Quarto-HoloViz - Getting Started</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,6 +73,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/quarto-panel-convert/quarto-panel-convert.js"></script>
+<link href="site_libs/quarto-contrib/quarto-panel-convert/quarto-panel-convert.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -188,21 +190,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a>
-  <ul class="collapse">
-  <li><a href="#installing-quarto" id="toc-installing-quarto" class="nav-link" data-scroll-target="#installing-quarto">Installing Quarto</a></li>
+  <li><a href="#installing-quarto" id="toc-installing-quarto" class="nav-link active" data-scroll-target="#installing-quarto">Installing Quarto</a></li>
   <li><a href="#installing-the-quarto-holoviz-extension" id="toc-installing-the-quarto-holoviz-extension" class="nav-link" data-scroll-target="#installing-the-quarto-holoviz-extension">Installing the <code>quarto-holoviz</code> extension</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Getting Started</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
 
 
-<section id="getting-started" class="level1">
-<h1>Getting Started</h1>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <p>This guide will explain how to get started with <a href="https://quarto.org/">Quarto</a> for Python and the <code>quarto-holoviz</code> extension.</p>
 <section id="installing-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="installing-quarto">Installing Quarto</h2>
@@ -211,23 +223,191 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This will</p>
 <ul>
 <li>Create a Python environment named <code>quarto-holoviz</code>.</li>
-<li>Install Quarto.</li>
-<li>Install <code>jupyter</code>, <code>panel</code> and other Python packages</li>
+<li>Install Quarto and its dependencies perl and jupyter</li>
+<li>Install <code>panel</code> and other Python packages</li>
 </ul>
 <p>For alternative installation methods checkout the <a href="https://quarto.org/docs/get-started/">Quarto Getting Started Guide</a>.</p>
 </section>
 <section id="installing-the-quarto-holoviz-extension" class="level2">
 <h2 class="anchored" data-anchor-id="installing-the-quarto-holoviz-extension">Installing the <code>quarto-holoviz</code> extension</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use HoloViz with Quarto without this extension. If you install the extension you will get additional features. Currently the <code>{panel-convert-python}</code> filter.</p>
+</div>
+</div>
 <p>You can install the <code>quarto-holoviz</code> extension in your Quarto project via</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add awesome-panel/quarto-holoviz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will install the extension under the <code>_extensions</code> subdirectory. If you’re using version control, you will want to check in this directory.</p>
 <p>Now put this in the header of your document, or in the <code>_quarto.yml</code> file:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> holoviz/quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now you may use the <code>{panel-convert-python}</code> filter as explained in the <a href="./example-panel-convert-python.html">How to use Panel Convert</a> section.</p>
+<p>An example document is shown below.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Panel in Quarto Examples</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - holoviz/quarto</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>This is a Panel application embedded in a Quarto doc.</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{panel-convert-python}</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="in">import panel as pn</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="in">pn.extension(design="material")</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">pn.Column(</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="in">    "# Hello Panel + Quarto!",</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="in">    pn.rx("You selected: {}").format(slider),</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="in">).servable()</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<iframe frameborder="0" srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+  <head>
+    <meta charset=&quot;utf-8&quot;>
+    <title>Panel Application</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Roboto:300,400,500&quot; type=&quot;text/css&quot; />
+    <link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block&quot; type=&quot;text/css&quot; />
+
+<link rel=&quot;stylesheet&quot; href=&quot;https://pyscript.net/releases/2023.05.1/pyscript.css&quot; />
+<link rel=&quot;stylsheet&quot; href=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/pyscript.css&quot; />
+<style type=&quot;text/css&quot;>
+:host(.pn-loading),
+.pn-loading {
+  overflow: hidden;
+}
+
+:host(.pn-loading):before,
+.pn-loading:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: '';
+  z-index: 1000;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 50%;
+  border-width: 1px;
+  cursor: progress;
+}
+
+:host(.pn-loading) .pn-loading-msg,
+.pn-loading .pn-loading-msg {
+  position: absolute;
+  top: 72%;
+  font-size: 2em;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
 
 
-</section>
+:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {
+  background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=&quot;);
+  background-size: auto calc(min(50%, 400px));
+}
+</style><script defer src=&quot;https://pyscript.net/releases/2023.05.1/pyscript.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.3.2.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/material-components-web@7.0.0/dist/material-components-web.min.js&quot;></script>
+<script type=&quot;text/javascript&quot; src=&quot;https://cdn.holoviz.org/panel/1.3.6/dist/panel.min.js&quot;></script>
+
+<script type=&quot;text/javascript&quot;>
+  Bokeh.set_log_level(&quot;info&quot;);
+</script>  </head>
+  <body class=&quot;pn-loading pn-arc&quot;>
+    <div id=&quot;ec1817ed-2736-42a9-8670-1e60629657af&quot; data-root-id=&quot;p1002&quot; style=&quot;display: contents;&quot;></div>
+  <div id=&quot;b606f010-1643-40eb-b723-55a3b051a70d&quot; data-root-id=&quot;p1030&quot; style=&quot;display: contents;&quot;></div>
+  <div id=&quot;cf4de305-6c56-4e13-bb4a-bb8dd407f675&quot; data-root-id=&quot;p1031&quot; style=&quot;display: contents;&quot;></div>
+  <py-config>
+    packages = ['https://cdn.holoviz.org/panel/wheels/bokeh-3.3.2-py3-none-any.whl','https://cdn.holoviz.org/panel/1.3.6/dist/wheels/panel-1.3.6-py3-none-any.whl','pyodide-http==0.2.1']
+    </py-config>
+    <py-script>
+    import asyncio
+
+    from panel.io.pyodide import init_doc, write_doc
+
+    init_doc()
+
+    import panel as pn
+
+    pn.extension(design=&quot;material&quot;)
+
+    slider = pn.widgets.IntSlider(name=&quot;Select a value&quot;, value=10, start=0, end=100)
+    pn.Column(
+        &quot;# Hello Panel + Quarto!&quot;,
+        pn.rx(&quot;You selected: {}&quot;).format(slider),
+    ).servable()
+
+    asyncio.ensure_future(write_doc());</py-script>
+    <script type=&quot;application/json&quot; id=&quot;p1032&quot;>
+      {&quot;79c27ceb-84a7-4afd-afdc-4e54b4ca95da&quot;:{&quot;version&quot;:&quot;3.3.2&quot;,&quot;title&quot;:&quot;Panel Application&quot;,&quot;roots&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1002&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Column00130&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1007&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/loading.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1017&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/listpanel.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1003&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.jsdelivr.net/npm/material-components-web@7.0.0/dist/material-components-web.min.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1004&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/default.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1005&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/material_variables.css&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1006&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/bundled/theme/material.css&quot;}}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.markup.HTML&quot;,&quot;id&quot;:&quot;p1009&quot;,&quot;attributes&quot;:{&quot;css_classes&quot;:[&quot;markdown&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1008&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/markdown.css&quot;}},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;text&quot;:&quot;&amp;amp;lt;h1 id=&amp;amp;quot;hello-panel--quarto&amp;amp;quot;&amp;amp;gt;Hello Panel + Quarto! &amp;amp;lt;a class=&amp;amp;quot;header-anchor&amp;amp;quot; href=&amp;amp;quot;#hello-panel--quarto&amp;amp;quot;&amp;amp;gt;\u00b6&amp;amp;lt;/a&amp;amp;gt;&amp;amp;lt;/h1&amp;amp;gt;\n&quot;}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Row&quot;,&quot;id&quot;:&quot;p1010&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Row00120&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1017&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Row&quot;,&quot;id&quot;:&quot;p1011&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Row00129&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1017&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1012&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;WidgetBox00128&quot;,&quot;css_classes&quot;:[&quot;panel-widget-box&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;ImportedStyleSheet&quot;,&quot;id&quot;:&quot;p1016&quot;,&quot;attributes&quot;:{&quot;url&quot;:&quot;https://cdn.holoviz.org/panel/1.3.6/dist/css/widgetbox.css&quot;}},{&quot;id&quot;:&quot;p1017&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;Slider&quot;,&quot;id&quot;:&quot;p1014&quot;,&quot;attributes&quot;:{&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;title&quot;:&quot;Select a value&quot;,&quot;start&quot;:0,&quot;end&quot;:100,&quot;value&quot;:10}}]}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.layout.Column&quot;,&quot;id&quot;:&quot;p1018&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;Column00125&quot;,&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1017&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:0,&quot;align&quot;:&quot;start&quot;,&quot;children&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.markup.HTML&quot;,&quot;id&quot;:&quot;p1021&quot;,&quot;attributes&quot;:{&quot;css_classes&quot;:[&quot;markdown&quot;],&quot;stylesheets&quot;:[&quot;\n:host(.pn-loading.pn-arc):before, .pn-loading.pn-arc:before {\n  background-image: url(\&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJtYXJnaW46IGF1dG87IGJhY2tncm91bmQ6IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyBzaGFwZS1yZW5kZXJpbmc6IGF1dG87IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiPiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzNjM2MzIiBzdHJva2Utd2lkdGg9IjEwIiByPSIzNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTY0LjkzMzYxNDMxMzQ2NDE1IDU2Ljk3Nzg3MTQzNzgyMTM4Ij4gICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB2YWx1ZXM9IjAgNTAgNTA7MzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIj48L2FuaW1hdGVUcmFuc2Zvcm0+ICA8L2NpcmNsZT48L3N2Zz4=\&quot;);\n  background-size: auto calc(min(50%, 400px));\n}&quot;,{&quot;id&quot;:&quot;p1007&quot;},{&quot;id&quot;:&quot;p1008&quot;},{&quot;id&quot;:&quot;p1003&quot;},{&quot;id&quot;:&quot;p1004&quot;},{&quot;id&quot;:&quot;p1005&quot;},{&quot;id&quot;:&quot;p1006&quot;}],&quot;margin&quot;:[5,10],&quot;align&quot;:&quot;start&quot;,&quot;text&quot;:&quot;&amp;amp;lt;p&amp;amp;gt;You selected: 10&amp;amp;lt;/p&amp;amp;gt;\n&quot;}}]}}]}}]}}]}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.location.Location&quot;,&quot;id&quot;:&quot;p1030&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;location&quot;,&quot;reload&quot;:false}},{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;panel.models.browser.BrowserInfo&quot;,&quot;id&quot;:&quot;p1031&quot;,&quot;attributes&quot;:{&quot;name&quot;:&quot;browser_info&quot;}}],&quot;defs&quot;:[{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;ReactiveHTML1&quot;},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FlexBox1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;align_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;align_items&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;},{&quot;name&quot;:&quot;flex_direction&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;row&quot;},{&quot;name&quot;:&quot;flex_wrap&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;wrap&quot;},{&quot;name&quot;:&quot;justify_content&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;flex-start&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FloatPanel1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;config&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;contained&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;right-top&quot;},{&quot;name&quot;:&quot;offsetx&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;offsety&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;theme&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;primary&quot;},{&quot;name&quot;:&quot;status&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;normalized&quot;}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;GridStack1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;mode&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;warn&quot;},{&quot;name&quot;:&quot;ncols&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;nrows&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;allow_resize&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;allow_drag&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:true},{&quot;name&quot;:&quot;state&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;drag1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;slider_width&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:5},{&quot;name&quot;:&quot;slider_color&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;black&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:50}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;click1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;terminal_output&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;debug_name&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;clears&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;copy_to_clipboard1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;fill&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;none&quot;},{&quot;name&quot;:&quot;value&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;FastWrapper1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;object&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;style&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationAreaBase1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;NotificationArea1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;js_events&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:{&quot;type&quot;:&quot;map&quot;}},{&quot;name&quot;:&quot;notifications&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[]},{&quot;name&quot;:&quot;position&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;bottom-right&quot;},{&quot;name&quot;:&quot;_clear&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;types&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:[{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;warning&quot;],[&quot;background&quot;,&quot;#ffc107&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-exclamation-triangle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]},{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;type&quot;,&quot;info&quot;],[&quot;background&quot;,&quot;#007bff&quot;],[&quot;icon&quot;,{&quot;type&quot;:&quot;map&quot;,&quot;entries&quot;:[[&quot;className&quot;,&quot;fas fa-info-circle&quot;],[&quot;tagName&quot;,&quot;i&quot;],[&quot;color&quot;,&quot;white&quot;]]}]]}]}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;Notification&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;background&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;duration&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:3000},{&quot;name&quot;:&quot;icon&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;message&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:&quot;&quot;},{&quot;name&quot;:&quot;notification_type&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:null},{&quot;name&quot;:&quot;_destroyed&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:false}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;TemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;BootstrapTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]},{&quot;type&quot;:&quot;model&quot;,&quot;name&quot;:&quot;MaterialTemplateActions1&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;open_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0},{&quot;name&quot;:&quot;close_modal&quot;,&quot;kind&quot;:&quot;Any&quot;,&quot;default&quot;:0}]}]}}
+    </script>
+    <script type=&quot;text/javascript&quot;>
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('p1032').textContent;
+              const render_items = [{&quot;docid&quot;:&quot;79c27ceb-84a7-4afd-afdc-4e54b4ca95da&quot;,&quot;roots&quot;:{&quot;p1002&quot;:&quot;ec1817ed-2736-42a9-8670-1e60629657af&quot;,&quot;p1030&quot;:&quot;b606f010-1643-40eb-b723-55a3b051a70d&quot;,&quot;p1031&quot;:&quot;cf4de305-6c56-4e13-bb4a-bb8dd407f675&quot;},&quot;root_ids&quot;:[&quot;p1002&quot;,&quot;p1030&quot;,&quot;p1031&quot;]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log(&quot;Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing&quot;);
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != &quot;loading&quot;) fn();
+        else document.addEventListener(&quot;DOMContentLoaded&quot;, fn);
+      })();
+    </script>
+  </body>
+</html>" class="panel-app" onload="resizePanelApp(this)" allow="accelerometer;autoplay;camera;document-domain;encrypted-media;fullscreen;gamepad;geolocation;gyroscope;layout-animations;legacy-image-formats;microphone;oversized-images;payment;publickey-credentials-get;speaker-selection;sync-xhr;unoptimized-images;unsized-media;screen-wake-lock;web-share;xr-spatial-tracking"></iframe>
+
+<p>The above component is an entire Panel application running live and interactively powered by Pyodide.</p>
+
+
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
@@ -310,6 +490,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -463,7 +694,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Getting Started</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - holoviz/quarto</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>This guide will explain how to get started with <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span> for Python and the <span class="in">`quarto-holoviz`</span> extension.</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Installing Quarto</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>You can install everything you need with Conda</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> quarto-holoviz <span class="at">-c</span> conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>This will</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create a Python environment named <span class="in">`quarto-holoviz`</span>.</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Install Quarto and its dependencies perl and jupyter</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Install <span class="in">`panel`</span> and other Python packages</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>For alternative installation methods checkout the <span class="co">[</span><span class="ot">Quarto Getting Started Guide</span><span class="co">](https://quarto.org/docs/get-started/)</span>.</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Installing the `quarto-holoviz` extension</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>You can use HoloViz with Quarto without this extension. If you install the extension you will get additional features. Currently the <span class="in">`{panel-convert-python}`</span> filter.</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>You can install the <span class="in">`quarto-holoviz`</span> extension in your Quarto project via</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add awesome-panel/quarto-holoviz</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>This will install the extension under the <span class="in">`_extensions`</span> subdirectory. If you're using version control, you will want to check in this directory.</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>Now put this in the header of your document, or in the <span class="in">`_quarto.yml`</span> file:</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="in">```yaml</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span>holoviz/quarto</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>An example document is shown below.</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="in">````markdown</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>title: Panel in Quarto Examples</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>format: html</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>filters:</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>holoviz/quarto</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>This is a Panel application embedded in a Quarto doc.</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{panel-convert-python}</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="in">import panel as pn</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="in">pn.extension(design="material")</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="in">slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)</span></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="in">pn.Column(</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="in">    "# Hello Panel + Quarto!",</span></span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="in">    pn.rx("You selected: {}").format(slider),</span></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="in">).servable()</span></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{panel-convert-python}</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="in">import panel as pn</span></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="in">pn.extension(design="material")</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="in">slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)</span></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="in">pn.Column(</span></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="in">    "# Hello Panel + Quarto!",</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="in">    pn.rx("You selected: {}").format(slider),</span></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="in">).servable()</span></span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>The above component is an entire Panel application running live and interactively powered by Pyodide.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

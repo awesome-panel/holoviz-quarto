@@ -4,35 +4,49 @@
     "href": "getting-started.html",
     "title": "Getting Started",
     "section": "",
-    "text": "This guide will explain how to get started with Quarto for Python and the quarto-holoviz extension.\n\n\nYou can install everything you need with Conda\nconda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib\nThis will\n\nCreate a Python environment named quarto-holoviz.\nInstall Quarto.\nInstall jupyter, panel and other Python packages\n\nFor alternative installation methods checkout the Quarto Getting Started Guide.\n\n\n\nYou can install the quarto-holoviz extension in your Quarto project via\nquarto add awesome-panel/quarto-holoviz\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory.\nNow put this in the header of your document, or in the _quarto.yml file:\nfilters:\n  - holoviz/quarto\nNow you may use the {panel-convert-python} filter as explained in the How to use Panel Convert section."
+    "text": "This guide will explain how to get started with Quarto for Python and the quarto-holoviz extension."
   },
   {
     "objectID": "getting-started.html#installing-quarto",
     "href": "getting-started.html#installing-quarto",
     "title": "Getting Started",
-    "section": "",
-    "text": "You can install everything you need with Conda\nconda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib\nThis will\n\nCreate a Python environment named quarto-holoviz.\nInstall Quarto.\nInstall jupyter, panel and other Python packages\n\nFor alternative installation methods checkout the Quarto Getting Started Guide."
+    "section": "Installing Quarto",
+    "text": "Installing Quarto\nYou can install everything you need with Conda\nconda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib\nThis will\n\nCreate a Python environment named quarto-holoviz.\nInstall Quarto and its dependencies perl and jupyter\nInstall panel and other Python packages\n\nFor alternative installation methods checkout the Quarto Getting Started Guide."
   },
   {
     "objectID": "getting-started.html#installing-the-quarto-holoviz-extension",
     "href": "getting-started.html#installing-the-quarto-holoviz-extension",
     "title": "Getting Started",
-    "section": "",
-    "text": "You can install the quarto-holoviz extension in your Quarto project via\nquarto add awesome-panel/quarto-holoviz\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory.\nNow put this in the header of your document, or in the _quarto.yml file:\nfilters:\n  - holoviz/quarto\nNow you may use the {panel-convert-python} filter as explained in the How to use Panel Convert section."
+    "section": "Installing the quarto-holoviz extension",
+    "text": "Installing the quarto-holoviz extension\n\n\n\n\n\n\nNote\n\n\n\nYou can use HoloViz with Quarto without this extension. If you install the extension you will get additional features. Currently the {panel-convert-python} filter.\n\n\nYou can install the quarto-holoviz extension in your Quarto project via\nquarto add awesome-panel/quarto-holoviz\nThis will install the extension under the _extensions subdirectory. If you’re using version control, you will want to check in this directory.\nNow put this in the header of your document, or in the _quarto.yml file:\nfilters:\n  - holoviz/quarto\nAn example document is shown below.\n---\ntitle: Panel in Quarto Examples\nformat: html\nfilters:\n  - holoviz/quarto\n---\n\nThis is a Panel application embedded in a Quarto doc.\n\n```{panel-convert-python}\nimport panel as pn\n\npn.extension(design=\"material\")\n\nslider = pn.widgets.IntSlider(name=\"Select a value\", value=10, start=0, end=100)\npn.Column(\n    \"# Hello Panel + Quarto!\",\n    pn.rx(\"You selected: {}\").format(slider),\n).servable()\n```\n\n\n\nThe above component is an entire Panel application running live and interactively powered by Pyodide."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introduction",
+    "title": "Quarto-HoloViz",
     "section": "",
-    "text": "Introduction\nThe purpose of this project is to make it easy to use the HoloViz ecosystem with Quarto.\nWe do this by providing the quarto-holoviz extension as well as the how-to guides listed in the sidebar.\nThe HoloViz blog is currently created with the help of Quarto. Check out the source code here.\n\n\n\n\nHoloViz Quarto Example"
+    "text": "The purpose of this project is to make it easy to use the HoloViz ecosystem with Quarto.\nWe do this by providing the quarto-holoviz extension as well as the how-to guides listed in the sidebar.\nWith the HoloViz ecosystem you can easily embed the PyData ecosystem live and interactively in your documentation."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Quarto-HoloViz",
+    "section": "",
+    "text": "The purpose of this project is to make it easy to use the HoloViz ecosystem with Quarto.\nWe do this by providing the quarto-holoviz extension as well as the how-to guides listed in the sidebar.\nWith the HoloViz ecosystem you can easily embed the PyData ecosystem live and interactively in your documentation."
+  },
+  {
+    "objectID": "index.html#examples",
+    "href": "index.html#examples",
+    "title": "Quarto-HoloViz",
+    "section": "Examples",
+    "text": "Examples\n\nInteractive Matplotlib\n\n\nCode\nimport numpy as np\nimport panel as pn\nimport matplotlib.pyplot as plt\n\npn.extension(design=\"material\")\n\ndef plot(factor):\n  r = np.arange(0, 2, 0.01)\n  theta = factor * np.pi * r\n  fig, ax = plt.subplots(\n    subplot_kw = {'projection': 'polar'} \n  )\n  ax.plot(theta, r)\n  ax.set_rticks([0.5, 1.2, 1.5, 2])\n  ax.grid(True)\n  plt.close(fig)\n  return fig\n\nslider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25, name=\"Factor\")\nplot = pn.pane.Matplotlib(pn.rx(plot)(slider), tight=True, format=\"svg\", height=400, sizing_mode=\"stretch_width\")\npn.Column(\n  slider, plot, sizing_mode=\"stretch_width\"\n).embed(max_states=16, max_opts=16)\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n  \n\n\n\n\n\n\nThe HoloViz Blog\nThe HoloViz blog is created with the help of Quarto. Check out the source code here.\n\n\n\nThe HoloViz Blog"
   },
   {
     "objectID": "example-panel-convert-python.html",
     "href": "example-panel-convert-python.html",
     "title": "Panel Convert",
     "section": "",
-    "text": "This guide shows you how to use the {panel-convert-python} filter to create live, interactive documents with Quarto.\nWith this filter you can insert entire, templated applications into your documents. The downside is that the load time increases linearly with the number of applications you insert."
+    "text": "This guide shows you how to use the {panel-convert-python} filter with Quarto to create live and interactive documents.\nWith the {panel-convert-python} filter you can insert entire, templated Panel applications into your documents running directly in the browser powered by PyScript."
   },
   {
     "objectID": "example-panel-convert-python.html#configuration",
@@ -53,7 +67,7 @@
     "href": "example-python.html",
     "title": "Python",
     "section": "",
-    "text": "This guide shows you how to use the HoloViz ecosystem with Quarto {python} code blocks."
+    "text": "This guide shows you how to use the HoloViz ecosystem with Quarto {python} code blocks to create live and interactive documents."
   },
   {
     "objectID": "example-python.html#configuration",
@@ -74,7 +88,7 @@
     "href": "example-pyscript.html",
     "title": "PyScript",
     "section": "",
-    "text": "This guide shows you how to use HoloViz and PyScript to create live, interactive documents with Quarto."
+    "text": "This guide shows you how to use HoloViz with PyScript and Quarto to create live and interactive documents."
   },
   {
     "objectID": "example-pyscript.html#configuration",
