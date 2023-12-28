@@ -14,6 +14,7 @@ This guide shows you how to use [HoloViz](https://holoviz.org/) with [PyScript](
 In order to use Panel with Pyscript you will need to run `pn.extension(...)` in a `{python}` code block as you would normally do.
 
 ```{python}
+#| code-fold: false
 import panel as pn
 
 pn.extension("deckgl", design="material")

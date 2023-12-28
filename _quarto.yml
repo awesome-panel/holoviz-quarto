@@ -5,6 +5,15 @@ project:
 website:
   title: "holoviz-quarto"
   description: "The HoloViz-Quarto project makes it easy to use HoloViz with Quarto"
+  favicon: assets/logos/favicon.ico
+  repo-url: https://github.com/awesome-panel/holoviz-quarto
+  repo-actions: [edit, issue]
+  page-navigation: true
+  back-to-top-navigation: true
+  page-footer: "© Copyright 2023 Awesomme Panel contributors"
+  twitter-card:
+    site: "@HoloViz_org"
+  open-graph: true
   sidebar:
     title: false
     logo: assets/logos/holoviz-quarto.png
@@ -20,6 +29,12 @@ website:
         href: https://www.linkedin.com/company/panel-org
       - icon: github
         href: https://github.com/awesome-panel/holoviz-quarto
+      - icon: chat-text
+        href: https://discourse.holoviz.org
+        text: HoloViz Discourse
+      - icon: discord
+        href: https://discord.gg/UXdtYyGVQX
+        text: HoloViz Discord
     contents:
     - href: index.qmd
       text: Introduction
@@ -38,3 +53,5 @@ format:
     css: _quarto.css
     toc: true
     code-tools: true
+    code-fold: true
+    code-summary: "Show the code"
