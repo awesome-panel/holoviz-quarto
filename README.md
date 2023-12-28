@@ -8,7 +8,7 @@ The purpose of this project is to **make it easy to use the HoloViz ecosystem wi
 
 ## Disclaimer
 
-This is currently an **experiment** only.
+This is currently an **experiment** only. When its matured I hope it can become an official HoloViz project.
 
 ## Development
 
