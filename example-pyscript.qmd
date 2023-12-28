@@ -5,7 +5,7 @@ include-in-header:
     - example-pyscript-header.html
 ---
 
-This guide shows you how to use [HoloViz](https://holoviz.org/) and [PyScript](https://pyscript.net/) to create live, interactive documents with [Quarto](https://quarto.org/).
+This guide shows you how to use [HoloViz](https://holoviz.org/) with [PyScript](https://pyscript.net/) and [Quarto](https://quarto.org/) to create live and interactive documents.
 
 <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
 
@@ -73,7 +73,7 @@ def plot(factor):
   plt.close(fig)
   return fig
 
-slider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25,)
+slider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25, name="Factor")
 plot = pn.pane.Matplotlib(pn.rx(plot)(slider), tight=True, format="svg", height=400, sizing_mode="stretch_width")
 pn.Column(
   slider, plot, sizing_mode="stretch_width"

@@ -32,3 +32,4 @@ format:
     theme: cosmo
     css: _quarto.css
     toc: true
+    code-tools: true

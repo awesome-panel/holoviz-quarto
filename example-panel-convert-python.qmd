@@ -5,9 +5,13 @@ filters:
   - holoviz/quarto
 ---
 
-This guide shows you how to use the `{panel-convert-python}` filter to create live, interactive documents with Quarto.
+This guide shows you how to use the `{panel-convert-python}` filter with [Quarto](https://quarto.org/) to create live and interactive documents.
 
-With this filter you can insert entire, templated applications into your documents. The downside is that the load time increases linearly with the number of applications you insert.
+With the `{panel-convert-python}` filter you can insert entire, templated Panel applications into your documents running directly in the browser powered by PyScript.
+
+::: {.callout-note}
+Please note that a +40MB Python environment is loaded by the user for each application you insert.
+:::
 
 <img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px">
 

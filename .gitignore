@@ -6,3 +6,5 @@ script.*
 .quarto/
 _output/
 _site/
+
+/.quarto/

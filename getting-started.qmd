@@ -1,4 +1,9 @@
-# Getting Started
+---
+title: Getting Started
+format: html
+filters:
+  - holoviz/quarto
+---
 
 This guide will explain how to get started with [Quarto](https://quarto.org/) for Python and the `quarto-holoviz` extension.
 
@@ -13,12 +18,16 @@ conda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl jupyter 
 This will
 
 - Create a Python environment named `quarto-holoviz`.
-- Install Quarto.
-- Install `jupyter`, `panel` and other Python packages
+- Install Quarto and its dependencies perl and jupyter
+- Install `panel` and other Python packages
 
 For alternative installation methods checkout the [Quarto Getting Started Guide](https://quarto.org/docs/get-started/).
 
 ## Installing the `quarto-holoviz` extension
+
+::: {.callout-note}
+You can use HoloViz with Quarto without this extension. If you install the extension you will get additional features. Currently the `{panel-convert-python}` filter.
+:::
 
 You can install the `quarto-holoviz` extension in your Quarto project via
 
@@ -35,4 +44,41 @@ filters:
   - holoviz/quarto
 ```
 
-Now you may use the `{panel-convert-python}` filter as explained in the [How to use Panel Convert](example-panel-convert-python.qmd) section.
+An example document is shown below.
+
+````markdown
+---
+title: Panel in Quarto Examples
+format: html
+filters:
+  - holoviz/quarto
+---
+
+This is a Panel application embedded in a Quarto doc.
+
+```{panel-convert-python}
+import panel as pn
+
+pn.extension(design="material")
+
+slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
+pn.Column(
+    "# Hello Panel + Quarto!",
+    pn.rx("You selected: {}").format(slider),
+).servable()
+```
+````
+
+```{panel-convert-python}
+import panel as pn
+
+pn.extension(design="material")
+
+slider = pn.widgets.IntSlider(name="Select a value", value=10, start=0, end=100)
+pn.Column(
+    "# Hello Panel + Quarto!",
+    pn.rx("You selected: {}").format(slider),
+).servable()
+```
+
+The above component is an entire Panel application running live and interactively powered by Pyodide.

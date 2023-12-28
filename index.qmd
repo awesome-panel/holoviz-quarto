@@ -1,11 +1,49 @@
-# Introduction
+# Quarto-HoloViz
+
+## Introduction
 
 The purpose of this project is to **make it easy to use the [HoloViz](https://holoviz.org/) ecosystem with [Quarto](https://quarto.org/)**.
 
 We do this by providing the `quarto-holoviz` extension as well as the *how-to* guides listed in the sidebar.
 
-The [HoloViz blog](https://blog.holoviz.org/) is currently created with the help of [Quarto](https://quarto.org/). Check out the source code [here](https://github.com/holoviz-dev/blog).
+With the HoloViz ecosystem you can easily **embed the PyData ecosystem live and interactively in
+your documentation**.
 
----
+## Examples
 
-![HoloViz Quarto Example](assets/gifs/example.gif)
+### Interactive Matplotlib
+
+```{python}
+#| code-fold: true
+#| code-summary: "Code"
+
+import numpy as np
+import panel as pn
+import matplotlib.pyplot as plt
+
+pn.extension(design="material")
+
+def plot(factor):
+  r = np.arange(0, 2, 0.01)
+  theta = factor * np.pi * r
+  fig, ax = plt.subplots(
+    subplot_kw = {'projection': 'polar'} 
+  )
+  ax.plot(theta, r)
+  ax.set_rticks([0.5, 1.2, 1.5, 2])
+  ax.grid(True)
+  plt.close(fig)
+  return fig
+
+slider = pn.widgets.FloatSlider(value=2, start=1, end=4, step=0.25, name="Factor")
+plot = pn.pane.Matplotlib(pn.rx(plot)(slider), tight=True, format="svg", height=400, sizing_mode="stretch_width")
+pn.Column(
+  slider, plot, sizing_mode="stretch_width"
+).embed(max_states=16, max_opts=16)
+```
+
+### The HoloViz Blog
+
+The [HoloViz blog](https://blog.holoviz.org/) is created with the help of [Quarto](https://quarto.org/). Check out the source code [here](https://github.com/holoviz-dev/blog).
+
+[![The HoloViz Blog](assets/images/holoviz-blog.png)](https://blog.holoviz.org/)
