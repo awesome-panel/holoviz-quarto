@@ -1,17 +1,33 @@
-# Quarto-HoloViz
-
-## Introduction
+# HoloViz-Quarto
 
 The purpose of this project is to **make it easy to use the [HoloViz](https://holoviz.org/) ecosystem with [Quarto](https://quarto.org/)**.
 
-We do this by providing the `quarto-holoviz` extension as well as the *how-to* guides listed in the sidebar.
+<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 50px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 50px;margin-right:10px">
+
+## Embed the HoloViz Ecosystem
+
+With [HoloViz](https://holoviz.org/) you get access to a large ecosystem of components for visualizing your data
+
+```{python}
+#| code-fold: true
+#| code-summary: "Code"
+import panel as pn
+import pandas as pd
+
+pn.extension(design="material")
+
+gis_1880 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_1945-1949.png'
+gis_2015 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_2015-2019.png'
+
+pn.Swipe(gis_1880, gis_2015, height=450, sizing_mode="stretch_width")
+```
+
+For inspiration check out the [Panel Component Gallery](https://panel.holoviz.org/reference/index.html).
+
+## Embed the PyData Ecosystem
 
 With the HoloViz ecosystem you can easily **embed the PyData ecosystem live and interactively in
 your documentation**.
-
-## Examples
-
-### Interactive Matplotlib
 
 ```{python}
 #| code-fold: true
@@ -42,7 +58,7 @@ pn.Column(
 ).embed(max_states=16, max_opts=16)
 ```
 
-### The HoloViz Blog
+## Create Beautiful Documentation
 
 The [HoloViz blog](https://blog.holoviz.org/) is created with the help of [Quarto](https://quarto.org/). Check out the source code [here](https://github.com/holoviz-dev/blog).
 
