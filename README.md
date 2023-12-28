@@ -4,7 +4,7 @@ The purpose of this project is to make it easy to use Panel and the rest of the 
 
 We do this by providing *how-to* guides as well as Quarto extensions.
 
-<img src="https://panel.holoviz.org/_static/logo_horizontal_light_theme.png" style="height: 30px;margin-right:10px"> <img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 30px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 30px;margin-right:10px"> <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" style="height: 30px;margin-right:10px">
+<img src="https://holoviz.org/_static/holoviz-logo-unstacked.svg" style="height: 50px;margin-right:10px"> <img src="https://quarto.org/quarto.png" style="height: 50px;margin-right:10px">
 
 ![Panel in Quarto Example](assets/gifs/example.gif)
 
@@ -12,17 +12,19 @@ DISCLAIMER: THIS IS **AN EXPERIMENT ONLY**. THE API MIGHT CHANGE. I DON'T WANT T
 
 ## Prerequisities
 
-- Quarto. Check out their [Getting Started Guide](https://quarto.org/docs/get-started/).
-- A Python environment.
-  - `jupyter`, `panel` and the packages you will be using in your Quarto documents should be installed.
-
-If you are a `conda` user, then you can install everything you need via
+You can install everything you need with Conda
 
 ```bash
-conda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl hvplot matplotlib panel jupyter
+conda create -n quarto-holoviz -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib
 ```
 
-or similar
+This will
+
+- Create a Python environment named `quarto-holoviz`.
+- Install Quarto and its dependencies perl and jupyter
+- Install `panel` and other Python packages
+
+For alternative installation methods checkout the [Quarto Getting Started Guide](https://quarto.org/docs/get-started/).
 
 ## Installing
 
@@ -70,16 +72,6 @@ pn.Column(
 
 ![Example Quarto Document](assets/gifs/example-readme.gif)
 
-## Reference Guides
-
-The below *code block* filters can be used with the HoloViz ecosystem.
-
-| Reference| Filter | Extension | Description  |
-| - | - | - | - |
-| [`{panel-convert-python}`](example-panel-convert-python.qmd) | `panel-convert-python` | `holoviz/quarto` | How-to use use the `{panel-convert-python}` filter |
-| [PyScript](example-pyscript.qmd) |  |  | How to use Panel with Pyscript |
-| [`{pyscript}`](example-python.qmd) | `python` |  | How-to use the `{python}` filter |
-
 ## Development
 
 ```bash
@@ -89,15 +81,15 @@ conda create -n quarto-holoviz conda-forge r-quarto perl matplotlib panel hvplot
 
 To setup your development environment and learn more about quarto development check out the [Quarto Lua Development Guide](https://quarto.org/docs/extensions/lua.html).
 
-To preview an example run one of
+### Deployment
+
+Run
 
 ```bash
-quarto preview example-panel-convert-python.qmd --port 5008
-quarto preview example-pyscript.qmd --port 5008
-quarto preview example-python.qmd --port 5008
+
 ```
 
-## Resources
+### Resources
 
 - [Creating Quarto Extensions](https://quarto.org/docs/extensions/creating.html)
 - [Quarto Extensions](https://quarto.org/docs/extensions/listing-filters.html)
