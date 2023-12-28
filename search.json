@@ -11,7 +11,7 @@
     "href": "getting-started.html#installing-quarto",
     "title": "Getting Started",
     "section": "Installing Quarto",
-    "text": "Installing Quarto\nYou can install everything you need with Conda\nconda create -n holoviz-quarto -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib\nThis will\n\nCreate a Python environment named holoviz-quarto.\nInstall Quarto and its dependencies perl and jupyter\nInstall panel and other Python packages\n\nFor alternative installation methods checkout the Quarto Getting Started Guide."
+    "text": "Installing Quarto\nYou can install everything you need with Conda\nconda create -n holoviz-quarto -c conda-forge python=3.11 r-quarto perl jupyter panel hvplot matplotlib\nThis will\n\nCreate a Python environment named holoviz-quarto.\nInstall Quarto and its dependencies perl and jupyter\nInstall panel and other Python packages\n\nFor alternative installation methods check out the Quarto Getting Started Guide."
   },
   {
     "objectID": "getting-started.html#installing-the-holoviz-quarto-extension",
@@ -32,7 +32,7 @@
     "href": "index.html#embed-the-holoviz-ecosystem",
     "title": "HoloViz-Quarto",
     "section": "Embed the HoloViz Ecosystem",
-    "text": "Embed the HoloViz Ecosystem\nWith HoloViz you get access to a large ecosystem of components for visualizing your data\n\n\nCode\nimport panel as pn\nimport pandas as pd\n\npn.extension(design=\"material\")\n\ngis_1880 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_1945-1949.png'\ngis_2015 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_2015-2019.png'\n\npn.Swipe(gis_1880, gis_2015, height=450, sizing_mode=\"stretch_width\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n  \n\n\n\n\nFor inspiration check out the Panel Component Gallery."
+    "text": "Embed the HoloViz Ecosystem\nWith HoloViz you get access to a large ecosystem of tools for data visualization.\n\n\nCode\nimport panel as pn\nimport pandas as pd\n\npn.extension(design=\"material\")\n\ngis_1880 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_1945-1949.png'\ngis_2015 = 'https://earthobservatory.nasa.gov/ContentWOC/images/globaltemp/global_gis_2015-2019.png'\n\nswipe = pn.Swipe(gis_1880, gis_2015, height=450, sizing_mode=\"stretch_width\")\npn.Column(\n  pn.chat.ChatMessage(\"Show me the global temperature change from 1945 to 2019\", user=\"User\"),\n  pn.chat.ChatMessage(swipe, user=\"Assistant\"),\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nFor inspiration check out the Panel Component Gallery."
   },
   {
     "objectID": "index.html#embed-the-pydata-ecosystem",
